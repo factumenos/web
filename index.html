@@ -571,6 +571,39 @@ input[type=range]::-moz-range-thumb{
 .kpi-txt a{color:var(--verde);font-weight:500}
 
 .testimonios{display:grid;gap:1.3rem}
+@media(max-width:819px){
+  .testimonios{
+    display:flex;gap:0.9rem;
+    overflow-x:auto;overflow-y:hidden;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    margin:0 -1.4rem;padding:0.2rem 1.4rem 0.6rem;
+    scrollbar-width:none;-ms-overflow-style:none;
+  }
+  .testimonios::-webkit-scrollbar{display:none}
+  .testimonio{
+    flex:0 0 86%;scroll-snap-align:center;
+    opacity:1 !important;transform:none !important;
+  }
+  .testimonio:hover{transform:none}
+  .carrusel-nav{display:flex}
+}
+.carrusel-nav{display:none;align-items:center;justify-content:center;gap:1rem;margin-top:1.2rem}
+.carrusel-flecha{
+  width:38px;height:38px;border-radius:50%;flex-shrink:0;
+  border:1.5px solid var(--linea-fuerte);background:var(--papel-2);
+  color:var(--tinta-media);cursor:pointer;padding:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:border-color .15s,color .15s,transform .12s;
+}
+.carrusel-flecha:hover{border-color:var(--verde);color:var(--verde)}
+.carrusel-flecha:active{transform:scale(0.92)}
+.carrusel-flecha svg{width:16px;height:16px}
+.carrusel-puntos{display:flex;justify-content:center;gap:0.45rem}
+.carrusel-punto{
+  width:7px;height:7px;border-radius:50%;background:var(--linea-fuerte);
+  border:none;padding:0;transition:background .2s ease,width .2s ease;
+}
+.carrusel-punto.activo{background:var(--verde);width:20px;border-radius:99px}
 @media(min-width:820px){.testimonios{grid-template-columns:1fr 1fr;gap:1.6rem}}
 .testimonio{
   background:var(--papel-2);border:1px solid var(--linea);border-radius:var(--radio);
@@ -1136,6 +1169,15 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
         </div>
       </article>
     </div>
+    <div class="carrusel-nav" id="nav-testimonios">
+      <button type="button" class="carrusel-flecha" id="test-anterior" aria-label="Testimonio anterior">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 L5 8 L10 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="carrusel-puntos" id="puntos-testimonios"></div>
+      <button type="button" class="carrusel-flecha" id="test-siguiente" aria-label="Testimonio siguiente">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3 L11 8 L6 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
   </div>
 </section>
 
@@ -1419,6 +1461,94 @@ const observer=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
 },{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+/* ---------- carrusel de testimonios (solo móvil) ---------- */
+(function(){
+  const pista=document.querySelector('.testimonios');
+  const puntos=document.getElementById('puntos-testimonios');
+  const nav=document.getElementById('nav-testimonios');
+  if(!pista||!puntos||!nav)return;
+
+  const tarjetas=[...pista.querySelectorAll('.testimonio')];
+  const menosMovimiento=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let actual=0, auto=null, pausaTemporal=null;
+
+  // indicadores
+  tarjetas.forEach((_,i)=>{
+    const b=document.createElement('button');
+    b.type='button';
+    b.className='carrusel-punto'+(i===0?' activo':'');
+    b.setAttribute('aria-label','Ver testimonio '+(i+1));
+    b.addEventListener('click',()=>{irA(i);intervenirUsuario();});
+    puntos.appendChild(b);
+  });
+  const listaPuntos=[...puntos.querySelectorAll('.carrusel-punto')];
+
+  function irA(i,suave=true){
+    actual=(i+tarjetas.length)%tarjetas.length;
+    pista.scrollTo({
+      left:tarjetas[actual].offsetLeft-(pista.clientWidth-tarjetas[actual].offsetWidth)/2,
+      behavior:(suave&&!menosMovimiento)?'smooth':'auto'
+    });
+    marcar(actual);
+  }
+  function marcar(i){
+    listaPuntos.forEach((p,n)=>p.classList.toggle('activo',n===i));
+  }
+
+  document.getElementById('test-anterior').addEventListener('click',()=>{irA(actual-1);intervenirUsuario();});
+  document.getElementById('test-siguiente').addEventListener('click',()=>{irA(actual+1);intervenirUsuario();});
+
+  // el punto activo sigue al dedo
+  let esperando=false;
+  pista.addEventListener('scroll',()=>{
+    if(esperando)return;
+    esperando=true;
+    requestAnimationFrame(()=>{
+      const centro=pista.scrollLeft+pista.clientWidth/2;
+      let cerca=0,min=Infinity;
+      tarjetas.forEach((t,i)=>{
+        const d=Math.abs((t.offsetLeft+t.offsetWidth/2)-centro);
+        if(d<min){min=d;cerca=i;}
+      });
+      actual=cerca;marcar(cerca);
+      esperando=false;
+    });
+  },{passive:true});
+
+  /* --- avance automático --- */
+  function arrancar(){
+    if(menosMovimiento||auto)return;
+    auto=setInterval(()=>irA(actual+1),5000);
+  }
+  function parar(){clearInterval(auto);auto=null;}
+
+  // al tocar, se detiene y reanuda 9 s después
+  function intervenirUsuario(){
+    parar();
+    clearTimeout(pausaTemporal);
+    pausaTemporal=setTimeout(arrancar,9000);
+  }
+  pista.addEventListener('touchstart',intervenirUsuario,{passive:true});
+  pista.addEventListener('mousedown',intervenirUsuario);
+
+  // solo avanza si la sección está en pantalla (y el carrusel está activo)
+  const vigilante=new IntersectionObserver(entradas=>{
+    entradas.forEach(e=>{
+      const activo=getComputedStyle(nav).display!=='none';
+      if(e.isIntersecting&&activo)arrancar();else parar();
+    });
+  },{threshold:0.35});
+  vigilante.observe(pista);
+
+  // si cambia el tamaño y deja de ser carrusel, se detiene
+  window.addEventListener('resize',()=>{
+    if(getComputedStyle(nav).display==='none')parar();
+  });
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden)parar();
+  });
+})();
 
 /* ---------- FAQ ---------- */
 function toggleFaq(btn){
