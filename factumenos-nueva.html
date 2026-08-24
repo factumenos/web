@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#F6F4EE">
+<link rel="icon" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2300c47d'/%3E%3Ctext x='50' y='72' font-family='Arial,sans-serif' font-weight='900' font-size='56' fill='%230c110e' text-anchor='middle'%3EFM%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+<title>FactuMenos — Reduce tu factura de móvil, fibra y TV a la mitad</title>
+<meta name="description" content="FactuMenos: baja tu factura de móvil, fibra y TV hasta 50%. Análisis gratis en 24h sin cambiar de compañía. Solo pagas si ahorras.">
+<meta name="keywords" content="bajar factura móvil, reducir factura, cambiar de compañía, negociar descuento, factura más barata, ahorro factura móvil, renegociar contrato, factura fibra, factura TV, análisis factura gratis">
+<meta property="og:title" content="FactuMenos — Reduce tu factura de móvil, fibra y TV a la mitad">
+<meta property="og:description" content="Negocia mejores precios con tu operadora actual. Sin cambiar de compañía. Sin compromiso.">
+<meta property="og:url" content="https://factumenos.es">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://factumenos.es/favicon.png">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FactuMenos — Reduce tu factura de móvil a la mitad">
+<meta name="twitter:description" content="Baja tu factura sin cambiar de compañía. Análisis gratis.">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R8BXRZ4YPB"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-R8BXRZ4YPB');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Spline+Sans+Mono:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "FactuMenos",
+  "url": "https://factumenos.es",
+  "telephone": "+34660309778",
+  "email": "contacto@factumenos.es",
+  "description": "Servicio de negociación de facturas de móvil, fibra y TV. Reduce tu factura sin cambiar de compañía.",
+  "areaServed": "ES",
+  "priceRange": "$$",
+  "sameAs": ["https://www.trustpilot.com/review/factumenos.es"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "telephone": "+34660309778",
+    "email": "contacto@factumenos.es"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Es totalmente gratis analizar mi factura?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El análisis es completamente gratis, sin compromiso de nada. Si no encontramos ahorro, no te cuesta absolutamente nada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Con quién seguiré cuando consigáis descuento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con la misma compañía. No te cambias de operadora. Solo negociamos un mejor precio con tu proveedor actual."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tengo que hacer algo o es totalmente gestión vuestra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es totalmente nuestra gestión. Nosotros hacemos las llamadas, tramitamos los papeles, gestionamos todo."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "FactuMenos",
+  "url": "https://factumenos.es",
+  "logo": "https://factumenos.es/favicon.png",
+  "description": "Servicio de negociación de facturas de móvil, fibra y TV. Reduce tu factura sin cambiar de compañía.",
+  "sameAs": ["https://www.trustpilot.com/review/factumenos.es"],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "227"
+  }
+}
+</script>
+
+<style>
+/* ============================================================
+   FACTUMENOS — "La factura corregida"
+   Papel · tinta · boli rojo (lo que sobra) · boli verde (lo que consigues)
+   ============================================================ */
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --papel:#F6F4EE;
+  --papel-2:#FFFFFF;
+  --tinta:#141C17;
+  --tinta-media:#4C5A51;
+  --tinta-suave:#77857B;
+  --linea:#E1DED2;
+  --linea-fuerte:#C9C6B8;
+  --verde:#008C5A;          /* texto/trazos sobre papel */
+  --verde-vivo:#00C47D;     /* rellenos, acentos sobre oscuro */
+  --verde-oscuro:#0E2C1F;   /* sección despacho */
+  --verde-negro:#0A1F16;    /* footer */
+  --rojo:#D0452C;           /* boli rojo: lo que pagas de más */
+  --sombra-papel:0 1px 2px rgba(20,28,23,0.05),0 8px 28px rgba(20,28,23,0.08);
+  --f-display:'Familjen Grotesk',sans-serif;
+  --f-mono:'Spline Sans Mono',monospace;
+  --f-mano:'Caveat',cursive;
+  --radio:14px;
+  --ancho:1120px;
+}
+
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{
+  font-family:var(--f-display);
+  background:var(--papel);
+  color:var(--tinta);
+  line-height:1.6;
+  font-size:16.5px;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:rgba(0,196,125,0.28)}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+
+.contenedor{max-width:var(--ancho);margin:0 auto;padding:0 1.4rem}
+@media(min-width:900px){.contenedor{padding:0 2.5rem}}
+
+/* ---------- utilidades de "corrección" ---------- */
+.tachado-rojo{position:relative;white-space:nowrap}
+.tachado-rojo::after{
+  content:"";position:absolute;left:-2%;right:-2%;top:52%;height:0.10em;
+  background:var(--rojo);border-radius:2px;transform:rotate(-1.6deg);
+  transform-origin:left center;
+}
+.mano{font-family:var(--f-mano);font-weight:700;color:var(--verde);line-height:1}
+.mano-rojo{font-family:var(--f-mano);font-weight:600;color:var(--rojo);line-height:1.05}
+.mono{font-family:var(--f-mono)}
+
+.eyebrow{
+  font-family:var(--f-mono);font-size:0.81rem;font-weight:600;
+  letter-spacing:0.14em;text-transform:uppercase;color:var(--verde);
+  display:flex;align-items:center;gap:0.6rem;margin-bottom:1.1rem;
+}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--verde);border-radius:2px}
+
+h1,h2,h3{font-weight:700;letter-spacing:-0.02em;line-height:1.08}
+h2{font-size:clamp(1.9rem,4.4vw,2.9rem);margin-bottom:0.9rem}
+.seccion-intro{max-width:560px;color:var(--tinta-media);font-size:1.02rem;margin-bottom:2.8rem}
+
+/* ---------- botones ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;
+  font-family:var(--f-display);font-weight:600;font-size:1rem;
+  padding:0.95rem 1.7rem;border-radius:999px;border:none;cursor:pointer;
+  text-decoration:none;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+  will-change:transform;
+}
+.btn-primario{background:var(--tinta);color:var(--papel);box-shadow:0 2px 0 rgba(20,28,23,0.35)}
+.btn-primario:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(20,28,23,0.28);background:#0b110d}
+.btn-primario:active{transform:translateY(0)}
+.btn-verde{background:var(--verde-vivo);color:var(--verde-negro);box-shadow:0 2px 0 rgba(0,110,70,0.5)}
+.btn-verde:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,196,125,0.35)}
+.btn-grande{font-size:1.08rem;padding:1.15rem 2.2rem}
+.btn-fantasma{background:transparent;color:var(--tinta);border:1.5px solid var(--linea-fuerte)}
+.btn-fantasma:hover{border-color:var(--tinta);transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--verde-vivo);outline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--verde-vivo);outline-offset:3px}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:120;
+  background:rgba(246,244,238,0.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--linea);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:700;font-size:1.28rem;letter-spacing:-0.02em;text-decoration:none;position:relative;line-height:1}
+.logo .menos{color:var(--verde);position:relative}
+.logo .menos::after{
+  content:"";position:absolute;left:0;right:-2px;bottom:-5px;height:5px;
+  background:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' preserveAspectRatio='none'%3E%3Cpath d='M2 5 C 20 2, 45 7, 70 4 S 95 3, 98 5' stroke='%2300C47D' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+}
+.nav-links{display:none;gap:2rem;align-items:center}
+.nav-links a{text-decoration:none;font-size:0.96rem;font-weight:500;color:var(--tinta-media);transition:color .15s}
+.nav-links a:hover{color:var(--tinta)}
+.nav-cta{display:none}
+@media(min-width:900px){
+  .nav-links{display:flex}
+  .nav-cta{display:inline-flex;padding:0.6rem 1.2rem;font-size:0.96rem}
+}
+.hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{width:22px;height:2px;background:var(--tinta);border-radius:2px;transition:transform .25s,opacity .25s}
+.hamburger.abierto span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.abierto span:nth-child(2){opacity:0}
+.hamburger.abierto span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(min-width:900px){.hamburger{display:none}}
+.menu-movil{
+  display:none;flex-direction:column;gap:0.2rem;
+  background:var(--papel);border-bottom:1px solid var(--linea);
+  padding:0.8rem 1.4rem 1.4rem;
+}
+.menu-movil.abierto{display:flex}
+.menu-movil a{text-decoration:none;padding:0.7rem 0;font-weight:500;color:var(--tinta);border-bottom:1px solid var(--linea);font-size:1.02rem}
+.menu-movil a:last-child{border-bottom:none}
+.menu-movil .btn{margin-top:0.8rem;justify-content:center}
+
+/* ---------- hero ---------- */
+.hero{padding:3.2rem 0 3.6rem;position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='210' viewBox='0 0 300 210'%3E%3Cg font-family='monospace' font-size='11' fill='%235a7a66'%3E%3Ctext x='14' y='26'%3ECuota m%C3%B3vil%3C/text%3E%3Ctext x='210' y='26'%3E45,90%3C/text%3E%3Ctext x='14' y='62'%3EFibra 600 Mb%3C/text%3E%3Ctext x='210' y='62'%3E39,90%3C/text%3E%3Ctext x='14' y='98'%3ETelevisi%C3%B3n%3C/text%3E%3Ctext x='214' y='98'%3E22,00%3C/text%3E%3Ctext x='14' y='134'%3EServicios%3C/text%3E%3Ctext x='218' y='134'%3E9,90%3C/text%3E%3Ctext x='14' y='170'%3ETOTAL%3C/text%3E%3Ctext x='202' y='170'%3E117,70%3C/text%3E%3C/g%3E%3Cg stroke='%235a7a66' stroke-width='1' stroke-dasharray='3 4'%3E%3Cpath d='M14 36 H286'/%3E%3Cpath d='M14 72 H286'/%3E%3Cpath d='M14 108 H286'/%3E%3Cpath d='M14 144 H286'/%3E%3Cpath d='M14 180 H286'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:300px 210px;
+  opacity:0.10;
+  -webkit-mask-image:radial-gradient(120% 85% at 50% 42%,transparent 0%,transparent 38%,#000 100%);
+  mask-image:radial-gradient(120% 85% at 50% 42%,transparent 0%,transparent 38%,#000 100%);
+}
+.hero::after{
+  content:"";position:absolute;z-index:0;pointer-events:none;
+  top:-14%;left:50%;width:min(760px,100%);height:520px;transform:translateX(-50%);
+  background:radial-gradient(ellipse at center,rgba(0,196,125,0.13) 0%,rgba(0,196,125,0.05) 42%,transparent 70%);
+}
+.hero .contenedor{position:relative;z-index:1}
+@media(min-width:960px){.hero::after{left:34%;width:min(620px,60%)}}
+@media(min-width:960px){.hero{padding:5rem 0 5.5rem}}
+.hero-grid{display:grid;gap:3rem;align-items:center}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.05fr 0.95fr;gap:4rem}}
+
+.hero-chip{
+  display:inline-flex;align-items:center;gap:0.55rem;
+  font-family:var(--f-mono);font-size:0.85rem;font-weight:500;
+  color:var(--tinta-media);
+  border:1px solid var(--linea-fuerte);border-radius:999px;
+  padding:0.42rem 0.95rem;margin-bottom:1.6rem;background:var(--papel-2);
+}
+.hero-chip b{color:var(--tinta);font-weight:600}
+.hero-chip .estrella{color:var(--verde);font-size:0.96rem}
+
+.hero h1{
+  font-size:clamp(2.5rem,6.4vw,4.1rem);
+  letter-spacing:-0.03em;margin-bottom:1.3rem;
+}
+.hero h1 .subrayado{position:relative;display:inline-block}
+#hero-pct{
+  font-variant-numeric:tabular-nums;display:inline-block;
+  min-width:2ch;text-align:right;
+}
+.hero h1 .subrayado::after{
+  content:"";position:absolute;left:-1%;right:-1%;bottom:0.02em;height:0.14em;z-index:-1;
+  background:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M3 8 C 40 3, 90 10, 140 6 S 190 5, 197 8' stroke='%2300C47D' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+  transform:scaleX(0);transform-origin:left center;
+}
+@keyframes trazarSubrayado{to{transform:scaleX(1)}}
+body.cargado .hero h1 .subrayado::after{animation:trazarSubrayado .55s cubic-bezier(.5,0,.2,1) 1.5s forwards}
+.hero-sub{font-size:1.08rem;color:var(--tinta-media);max-width:520px;margin-bottom:2rem}
+.hero-sub b{color:var(--tinta);font-weight:600}
+.clave{
+  color:var(--verde);font-weight:600;
+  background:linear-gradient(to top,rgba(0,196,125,0.16) 0 0.42em,transparent 0.42em);
+  padding:0 0.06em;
+}
+.hero-acciones{display:flex;flex-wrap:wrap;gap:0.8rem;margin-bottom:1.1rem}
+.hero-micro{font-family:var(--f-mono);font-size:0.85rem;color:var(--tinta-suave);letter-spacing:0.02em}
+.hero-micro b{color:var(--verde);font-weight:600}
+.hero-pista{display:none}
+
+/* --- móvil: el hero ocupa la primera pantalla completa, centrado --- */
+@media(max-width:959px){
+  .hero{padding:0 0 3.4rem}
+  .hero-micro{margin-top:0.2rem}
+  .hero-sub{font-size:1.02rem;max-width:26ch}
+  .hero-grid{gap:2.4rem}
+  .hero-texto{text-align:center}
+  .hero-bloque{
+    min-height:calc(100vh - 68px);
+    min-height:calc(100svh - 68px);
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding:1.2rem 0;
+  }
+  .hero-chip{margin-bottom:2.3rem}
+  .hero-texto h1{margin-bottom:1.7rem}
+  .hero-sub{margin-left:auto;margin-right:auto;margin-bottom:2.5rem}
+  .hero-acciones{justify-content:center;width:100%;margin-bottom:1.2rem}
+  .hero-acciones .btn{width:100%;max-width:420px}
+  .hero-pista{
+    display:flex;flex-direction:column;align-items:center;gap:0.35rem;
+    margin:2.2rem auto 0;text-decoration:none;
+    font-family:var(--f-mono);font-size:0.77rem;letter-spacing:0.1em;
+    text-transform:uppercase;color:var(--tinta-suave);
+  }
+  .hero-pista svg{width:20px;height:12px;animation:pista 2.2s ease-in-out infinite}
+  @keyframes pista{0%,100%{transform:translateY(0);opacity:0.55}50%{transform:translateY(4px);opacity:1}}
+}
+
+/* ---------- la factura (firma visual) ---------- */
+.factura-marco{position:relative;max-width:460px;margin:0 auto;width:100%}
+.factura{
+  background:var(--papel-2);
+  border:1px solid var(--linea);
+  border-radius:6px;
+  box-shadow:var(--sombra-papel);
+  padding:1.6rem 1.5rem 1.4rem;
+  font-family:var(--f-mono);
+  position:relative;
+  transform:rotate(0.6deg);
+}
+@media(min-width:960px){.factura{padding:1.9rem 1.8rem 1.6rem}}
+.factura-cab{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--tinta);padding-bottom:0.7rem;margin-bottom:0.9rem}
+.factura-cab .titulo{font-weight:600;font-size:0.92rem;letter-spacing:0.12em}
+.factura-cab .mes{font-size:0.77rem;color:var(--tinta-suave)}
+.factura-linea{
+  display:grid;grid-template-columns:1fr auto;column-gap:0.8rem;align-items:baseline;
+  font-size:0.92rem;padding:0.52rem 0;border-bottom:1px dashed var(--linea);
+}
+.factura-linea .concepto{color:var(--tinta-media)}
+.factura-linea .importe{font-weight:500;white-space:nowrap}
+.factura-total{
+  display:flex;justify-content:space-between;align-items:center;gap:0.8rem;
+  padding-top:0.9rem;margin-top:0.4rem;font-size:1.0rem;font-weight:600;
+}
+.factura-total .importe-viejo{position:relative;font-size:1.15rem}
+.factura-total .importe-viejo::after{
+  content:"";position:absolute;left:-6%;right:-6%;top:50%;height:3px;background:var(--rojo);
+  border-radius:2px;transform:rotate(-4deg) scaleX(0);transform-origin:left center;
+}
+.anotacion{
+  grid-column:1/-1;justify-self:end;text-align:right;
+  font-family:var(--f-mano);font-weight:600;color:var(--rojo);
+  font-size:1.14rem;line-height:1.2;margin-top:0.22rem;max-width:100%;
+  opacity:0;transform:translateY(4px) rotate(-1.2deg);transform-origin:right center;
+}
+.factura-nuevo{
+  position:absolute;right:2.2rem;bottom:-1.6rem;
+  font-family:var(--f-mano);font-weight:700;color:var(--verde);
+  font-size:2.15rem;transform:rotate(-3deg);opacity:0;
+}
+.factura-nuevo svg{position:absolute;inset:-38% -14%;width:128%;height:176%;overflow:visible}
+.factura-nuevo svg path{stroke:var(--verde);stroke-width:2.4;fill:none;stroke-linecap:round;
+  stroke-dasharray:340;stroke-dashoffset:340}
+.sello{
+  position:absolute;top:-1.2rem;right:-0.5rem;max-width:11rem;text-align:center;line-height:1.4;
+  font-family:var(--f-mono);font-weight:600;font-size:0.77rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--verde);border:2.5px solid var(--verde);border-radius:8px;
+  padding:0.45rem 0.8rem;transform:rotate(7deg) scale(0);
+  background:rgba(255,255,255,0.75);
+}
+.factura-nota{
+  text-align:center;font-family:var(--f-mono);font-size:0.77rem;color:var(--tinta-suave);
+  margin-top:2.6rem;line-height:1.7;
+}
+.factura-nota b{color:var(--verde);font-weight:600;letter-spacing:0.01em}
+
+/* animación orquestada del hero */
+@keyframes tachar{to{transform:rotate(-4deg) scaleX(1)}}
+@keyframes aparecerNota{to{opacity:1;transform:translateY(0) rotate(-1.2deg)}}
+@keyframes aparecerNuevo{to{opacity:1}}
+@keyframes trazoCirculo{to{stroke-dashoffset:0}}
+@keyframes sellar{
+  0%{transform:rotate(7deg) scale(0)}
+  70%{transform:rotate(7deg) scale(1.12)}
+  100%{transform:rotate(7deg) scale(1)}
+}
+body.cargado .anotacion.a1{animation:aparecerNota .5s ease .7s forwards}
+body.cargado .anotacion.a2{animation:aparecerNota .5s ease 1.15s forwards}
+body.cargado .anotacion.a3{animation:aparecerNota .5s ease 1.6s forwards}
+body.cargado .anotacion.a4{animation:aparecerNota .5s ease 2.05s forwards}
+body.cargado .importe-viejo::after{animation:tachar .45s cubic-bezier(.6,0,.3,1) 2.55s forwards}
+body.cargado .factura-nuevo{animation:aparecerNuevo .4s ease 3.05s forwards}
+body.cargado .factura-nuevo svg path{animation:trazoCirculo .8s ease 3.25s forwards}
+body.cargado .sello{animation:sellar .5s cubic-bezier(.5,1.6,.4,1) 3.9s forwards}
+
+/* ---------- cinta de cifras: pie de resumen ---------- */
+.cinta{border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);background:var(--papel-2)}
+.cinta .contenedor{padding-top:2.2rem;padding-bottom:2.4rem}
+.cinta-titulo{
+  font-family:var(--f-mono);font-size:0.77rem;font-weight:600;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--tinta-suave);
+  display:flex;align-items:center;gap:0.9rem;margin-bottom:1.6rem;
+}
+.cinta-titulo::after{content:"";flex:1;height:1px;background:var(--linea)}
+.cinta-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 0}
+@media(min-width:820px){.cinta-grid{grid-template-columns:repeat(4,1fr);gap:0}}
+.cinta-item{
+  padding:0 1.1rem;display:flex;flex-direction:column;gap:0.35rem;
+  border-left:1px dashed var(--linea-fuerte);
+}
+.cinta-item:first-child{padding-left:0;border-left:none}
+@media(max-width:819px){
+  .cinta-item:nth-child(odd){padding-left:0;border-left:none}
+}
+.cinta-etq{
+  font-family:var(--f-mono);font-size:0.74rem;font-weight:600;letter-spacing:0.15em;
+  text-transform:uppercase;color:var(--tinta-suave);
+}
+.cinta-num{
+  font-family:var(--f-mono);font-weight:600;
+  font-size:clamp(2.1rem,5.2vw,2.7rem);letter-spacing:-0.045em;line-height:1;
+  display:flex;align-items:baseline;gap:0.06em;
+}
+.cinta-num .u{font-size:0.52em;letter-spacing:-0.01em;color:var(--tinta-suave);margin-left:0.14em}
+.cinta-num.destacado{color:var(--verde)}
+.cinta-num.destacado .u{color:var(--verde)}
+.cinta-txt{font-size:0.92rem;color:var(--tinta-media);line-height:1.45;max-width:20ch}
+
+/* ---------- secciones ---------- */
+section{padding:4.6rem 0}
+@media(min-width:900px){section{padding:6rem 0}}
+
+/* proceso / cronología */
+.crono{display:grid;gap:0;border-top:2px solid var(--tinta)}
+@media(min-width:860px){.crono{grid-template-columns:repeat(3,1fr)}}
+.crono-paso{padding:1.8rem 0 0.6rem;position:relative}
+@media(min-width:860px){.crono-paso{padding:2rem 2rem 0.5rem 0}}
+.crono-paso::before{
+  content:"";position:absolute;top:-6px;left:0;width:10px;height:10px;border-radius:50%;
+  background:var(--verde);
+}
+.crono-dia{font-family:var(--f-mono);font-size:0.81rem;font-weight:600;letter-spacing:0.12em;color:var(--verde);text-transform:uppercase;margin-bottom:0.7rem}
+.crono-paso h3{font-size:1.28rem;margin-bottom:0.55rem;letter-spacing:-0.015em}
+.crono-paso p{color:var(--tinta-media);font-size:1.0rem;max-width:340px}
+.crono-tag{
+  display:inline-block;margin-top:0.9rem;font-family:var(--f-mano);font-weight:600;
+  color:var(--verde);font-size:1.15rem;transform:rotate(-1.5deg);
+}
+.crono-cta{margin-top:3rem;display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem}
+
+/* ---------- calculadora: un solo panel ---------- */
+#calculadora{background:var(--papel-2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+@media(max-width:939px){#calculadora{padding:3.2rem 0 3.4rem}}
+.calc-cab{margin-bottom:1.6rem}
+.calc-cab h2{margin-bottom:0}
+.calc-panel{
+  background:var(--papel);border:1px solid var(--linea);border-radius:14px;
+  box-shadow:var(--sombra-papel);overflow:hidden;
+}
+@media(min-width:940px){
+  .calc-panel{display:grid;grid-template-columns:1fr 1fr}
+  .calc-control{border-right:1px solid var(--linea)}
+}
+.calc-control{padding:1.4rem 1.4rem 1.3rem;display:flex;flex-direction:column;gap:1.3rem;justify-content:center}
+@media(min-width:940px){.calc-control{padding:2.2rem;gap:1.8rem}}
+.calc-grupo{display:flex;flex-direction:column;gap:0.5rem}
+.calc-label{font-family:var(--f-mono);font-size:0.77rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:var(--tinta-suave)}
+.calc-select{
+  font-family:var(--f-display);font-size:1.0rem;color:var(--tinta);
+  background:var(--papel-2);border:1.5px solid var(--linea-fuerte);border-radius:10px;
+  padding:0.72rem 0.9rem;width:100%;cursor:pointer;
+  -webkit-appearance:none;appearance:none;transition:border-color .15s,box-shadow .15s;
+  background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234C5A51' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 0.9rem center;
+}
+.calc-select:focus{outline:none;border-color:var(--verde);box-shadow:0 0 0 3px rgba(0,140,90,0.15)}
+.calc-top{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.calc-actual{
+  font-family:var(--f-mono);font-weight:600;font-size:clamp(2.1rem,8vw,3rem);
+  letter-spacing:-0.04em;line-height:1;font-variant-numeric:tabular-nums;
+}
+.calc-actual small{font-size:0.3em;font-weight:500;color:var(--tinta-suave);letter-spacing:0}
+input[type=range]{
+  -webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:99px;
+  background:linear-gradient(to right,var(--verde) 43%,var(--borde) 43%);
+  outline:none;cursor:pointer;margin:0.9rem 0 0.45rem;touch-action:pan-y;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:28px;height:28px;border-radius:50%;
+  background:var(--tinta);border:5px solid var(--papel);
+  box-shadow:0 0 0 1.5px var(--tinta),0 3px 8px rgba(20,28,23,0.3);cursor:grab;
+}
+input[type=range]::-moz-range-thumb{
+  width:18px;height:18px;border-radius:50%;background:var(--tinta);
+  border:5px solid var(--papel);box-shadow:0 0 0 1.5px var(--tinta);cursor:grab;
+}
+.calc-rango{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:0.77rem;color:var(--tinta-suave)}
+
+.calc-resultado{padding:1.3rem 1.4rem 1.5rem;border-top:1px solid var(--linea);background:var(--papel-2)}
+@media(min-width:940px){.calc-resultado{padding:2.2rem;border-top:none}}
+.calc-fila{
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  padding:0.55rem 0;border-bottom:1px dashed var(--linea);font-size:0.96rem;
+}
+.calc-fila .c{color:var(--tinta-media)}
+.calc-fila .v{font-family:var(--f-mono);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* comparativa anual destacada */
+.calc-anual{
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:0.5rem;
+  margin-top:1.1rem;padding:1rem 0.9rem;border-radius:10px;
+  background:var(--superficie);border:1px solid var(--linea);
+}
+.ca-item{display:flex;flex-direction:column;gap:0.3rem;min-width:0}
+.ca-item:last-child{text-align:right;align-items:flex-end}
+.ca-etq{font-family:var(--f-mono);font-size:0.74rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--tinta-suave);line-height:1.3}
+.ca-val{
+  font-family:var(--f-mono);font-weight:600;font-size:clamp(1.05rem,3.6vw,1.3rem);
+  letter-spacing:-0.02em;font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.ca-val.tach{color:var(--tinta-suave);text-decoration:line-through;text-decoration-color:var(--rojo);text-decoration-thickness:2px}
+.ca-val.nuevo{color:var(--verde)}
+.ca-fl{font-family:var(--f-mono);color:var(--verde);font-size:1.1rem;padding:0 0.2rem}
+
+.calc-quedas{
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  margin-top:1rem;padding-top:1rem;border-top:2px solid var(--tinta);
+}
+.calc-quedas .c{font-weight:600;font-size:0.96rem;line-height:1.25;max-width:11ch}
+.calc-quedas .v{font-family:var(--f-mano);font-weight:700;color:var(--verde);font-size:clamp(2.3rem,9vw,2.9rem);line-height:1;transform:rotate(-2deg)}
+.calc-pie{font-family:var(--f-mono);font-size:0.77rem;color:var(--tinta-suave);margin-top:1rem;line-height:1.6}
+.calc-pie #op-nombre{color:var(--verde);font-weight:600}
+.calc-cta{margin-top:1.1rem}
+.calc-cta .btn{width:100%}
+
+/* ---------- cláusulas / garantías ---------- */
+.doc{
+  background:var(--papel-2);border:1px solid var(--linea);border-radius:6px;
+  box-shadow:var(--sombra-papel);padding:2rem 1.5rem;max-width:820px;margin:0 auto;
+  position:relative;
+}
+@media(min-width:800px){.doc{padding:2.8rem 3rem}}
+.doc-cab{
+  font-family:var(--f-mono);font-size:0.81rem;font-weight:600;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--tinta-suave);
+  border-bottom:2px solid var(--tinta);padding-bottom:0.8rem;margin-bottom:0.4rem;
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+}
+.clausula{display:flex;gap:1.1rem;padding:1.4rem 0;border-bottom:1px dashed var(--linea-fuerte);align-items:flex-start}
+.clausula:last-of-type{border-bottom:none}
+.clausula-num{
+  font-family:var(--f-mono);font-weight:600;font-size:0.85rem;color:var(--verde);
+  border:1.5px solid var(--verde);border-radius:6px;padding:0.25rem 0.5rem;
+  white-space:nowrap;margin-top:0.15rem;
+}
+.clausula h3{font-size:1.12rem;margin-bottom:0.35rem;letter-spacing:-0.01em}
+.clausula p{color:var(--tinta-media);font-size:0.96rem}
+.doc-firma{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;
+  margin-top:1.6rem;padding-top:1.3rem;border-top:2px solid var(--tinta);flex-wrap:wrap;
+}
+.doc-firma .txt{font-family:var(--f-mono);font-size:0.81rem;color:var(--tinta-suave);max-width:340px}
+.doc-firma .rubrica{font-family:var(--f-mano);font-weight:700;font-size:1.7rem;color:var(--tinta);transform:rotate(-3deg)}
+.doc-firma .rubrica span{color:var(--verde)}
+
+/* ---------- resultados ---------- */
+.kpis{display:grid;gap:1px;background:var(--linea);border:1px solid var(--linea);border-radius:var(--radio);overflow:hidden;margin-bottom:3.2rem}
+@media(min-width:820px){.kpis{grid-template-columns:repeat(3,1fr)}}
+.kpi{background:var(--papel-2);padding:1.9rem 1.6rem}
+.kpi-num{font-family:var(--f-mono);font-weight:600;font-size:clamp(1.9rem,4vw,2.6rem);letter-spacing:-0.02em;line-height:1.1}
+.kpi-num em{font-style:normal;color:var(--verde)}
+.kpi-txt{font-size:0.92rem;color:var(--tinta-suave);margin-top:0.3rem}
+.kpi-txt a{color:var(--verde);font-weight:500}
+
+.testimonios{display:grid;gap:1.3rem}
+@media(min-width:820px){.testimonios{grid-template-columns:1fr 1fr;gap:1.6rem}}
+.testimonio{
+  background:var(--papel-2);border:1px solid var(--linea);border-radius:var(--radio);
+  padding:1.7rem 1.6rem;display:flex;flex-direction:column;gap:1rem;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.testimonio:hover{transform:translateY(-3px);box-shadow:var(--sombra-papel)}
+.testimonio-cifra{font-family:var(--f-mono);font-weight:600;font-size:1.35rem;letter-spacing:-0.01em;display:flex;align-items:baseline;gap:0.6rem;flex-wrap:wrap}
+.testimonio-cifra .antes{position:relative;color:var(--tinta-suave)}
+.testimonio-cifra .antes::after{content:"";position:absolute;left:-4%;right:-4%;top:52%;height:2.5px;background:var(--rojo);transform:rotate(-3deg);border-radius:2px}
+.testimonio-cifra .despues{color:var(--verde)}
+.testimonio-cifra .flecha{color:var(--tinta-suave);font-size:1rem}
+.testimonio p{font-size:1.0rem;color:var(--tinta-media);flex:1}
+.testimonio-pie{display:flex;align-items:center;gap:0.8rem;font-size:0.92rem}
+.testimonio-pie .avatar{
+  width:38px;height:38px;border-radius:50%;background:var(--papel);
+  border:1.5px solid var(--linea-fuerte);display:flex;align-items:center;justify-content:center;
+  font-family:var(--f-mono);font-weight:600;font-size:0.81rem;color:var(--verde);
+}
+.testimonio-pie b{display:block;font-weight:600}
+.testimonio-pie span{color:var(--tinta-suave)}
+.testimonio-pie .estrellas{margin-left:auto;color:var(--verde);letter-spacing:2px;font-size:0.85rem}
+
+/* ---------- FAQ ---------- */
+#faq{background:var(--papel-2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.faq-lista{max-width:760px}
+.faq-item{border-bottom:1px solid var(--linea)}
+.faq-preg{
+  width:100%;background:none;border:none;cursor:pointer;text-align:left;
+  display:flex;justify-content:space-between;align-items:center;gap:1.4rem;
+  padding:1.35rem 0.2rem;font-family:var(--f-display);font-weight:600;
+  font-size:1.06rem;color:var(--tinta);letter-spacing:-0.01em;
+}
+.faq-mas{
+  font-family:var(--f-mono);color:var(--verde);font-size:1.3rem;font-weight:500;
+  transition:transform .25s ease;flex-shrink:0;
+}
+.faq-item.abierto .faq-mas{transform:rotate(45deg)}
+.faq-resp{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-resp p{padding:0 2.5rem 1.4rem 0.2rem;color:var(--tinta-media);font-size:1.0rem}
+
+/* ---------- despacho (formulario) ---------- */
+#contacto{background:var(--verde-oscuro);color:#EAF4EE;position:relative;overflow:hidden}
+#contacto .eyebrow{color:var(--verde-vivo)}
+#contacto .eyebrow::before{background:var(--verde-vivo)}
+#contacto h2{color:#fff}
+.form-grid-secc{display:grid;gap:3rem}
+@media(min-width:960px){.form-grid-secc{grid-template-columns:0.9fr 1.1fr;gap:4.5rem;align-items:start}}
+.form-copy p{color:#B9CFC2;font-size:1.02rem;max-width:440px;margin-bottom:1.8rem}
+.form-copy p b{color:#fff;font-weight:600}
+.form-puntos{list-style:none;display:flex;flex-direction:column;gap:0.85rem;margin-bottom:2.2rem}
+.form-puntos li{display:flex;gap:0.75rem;align-items:flex-start;font-size:1.0rem;color:#D7E6DC}
+.form-puntos .check{font-family:var(--f-mano);color:var(--verde-vivo);font-size:1.35rem;font-weight:700;line-height:1;margin-top:1px}
+.form-alt{
+  border-top:1px solid rgba(255,255,255,0.14);padding-top:1.6rem;
+  font-size:0.96rem;color:#9DB8A8;
+}
+.form-alt a{color:var(--verde-vivo);font-weight:500;text-decoration:none}
+.form-alt a:hover{text-decoration:underline}
+
+.form-papel{
+  background:var(--papel-2);color:var(--tinta);border-radius:8px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.35);
+  padding:1.8rem 1.5rem;position:relative;
+}
+@media(min-width:960px){.form-papel{padding:2.3rem 2.2rem;transform:rotate(0.4deg)}}
+.form-papel-cab{
+  font-family:var(--f-mono);font-size:0.81rem;font-weight:600;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--tinta-suave);
+  border-bottom:2px solid var(--tinta);padding-bottom:0.7rem;margin-bottom:1.5rem;
+  display:flex;justify-content:space-between;gap:1rem;
+}
+.form-papel-cab em{font-style:normal;color:var(--verde)}
+.form-grid{display:grid;gap:1.15rem}
+@media(min-width:640px){.form-grid{grid-template-columns:1fr 1fr}}
+.form-grupo{display:flex;flex-direction:column;gap:0.4rem}
+.form-grupo.full{grid-column:1/-1}
+.form-grupo label{
+  font-family:var(--f-mono);font-size:0.77rem;font-weight:600;
+  letter-spacing:0.1em;text-transform:uppercase;color:var(--tinta-media);
+}
+.form-grupo input[type=text],
+.form-grupo input[type=tel],
+.form-grupo input[type=email],
+.form-grupo select{
+  font-family:var(--f-display);font-size:1rem;color:var(--tinta);
+  background:var(--papel);border:1.5px solid var(--linea-fuerte);border-radius:10px;
+  padding:0.8rem 0.95rem;width:100%;transition:border-color .15s,box-shadow .15s;
+  -webkit-appearance:none;appearance:none;
+}
+.form-grupo select{
+  background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234C5A51' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 0.9rem center;
+}
+.form-grupo input:focus,.form-grupo select:focus{outline:none;border-color:var(--verde);box-shadow:0 0 0 3px rgba(0,140,90,0.15)}
+.prefijo{
+  display:flex;align-items:center;background:var(--papel);border:1.5px solid var(--linea-fuerte);
+  border-radius:10px;padding:0 0.85rem;font-size:1.0rem;white-space:nowrap;color:var(--tinta-media);
+}
+.tel-campo{
+  display:flex;align-items:stretch;width:100%;
+  background:var(--papel);border:1.5px solid var(--linea-fuerte);border-radius:10px;
+  overflow:hidden;transition:border-color .15s,box-shadow .15s;
+}
+.tel-campo:focus-within{border-color:var(--verde);box-shadow:0 0 0 3px rgba(0,140,90,0.15)}
+.tel-prefijo{
+  display:flex;align-items:center;flex:0 0 auto;
+  padding:0 0.85rem;white-space:nowrap;
+  font-family:var(--f-display);font-size:1rem;color:var(--tinta-media);
+  background:var(--superficie);border-right:1.5px solid var(--linea-fuerte);
+}
+.form-grupo .tel-campo input[type=tel]{
+  flex:1 1 auto;min-width:0;width:100%;
+  border:none;border-radius:0;background:transparent;padding:0.8rem 0.9rem;
+}
+.form-grupo .tel-campo input[type=tel]:focus{outline:none;box-shadow:none;border:none}
+.form-error{display:none;font-size:0.85rem;color:var(--rojo);margin-top:0.1rem}
+.drop-zone{
+  background:var(--papel);border:1.5px dashed var(--linea-fuerte);border-radius:10px;
+  padding:1.4rem 1rem;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;
+}
+.drop-zone:hover{border-color:var(--verde);background:#F2F6F1}
+.drop-zone .clip{font-size:1.35rem;margin-bottom:0.3rem}
+.drop-zone .txt{font-size:0.92rem;color:var(--tinta-suave)}
+.privacidad-fila{flex-direction:row !important;align-items:flex-start;gap:0.75rem}
+.privacidad-fila input[type=checkbox]{width:18px;height:18px;min-width:18px;margin-top:2px;accent-color:var(--verde);cursor:pointer}
+.privacidad-fila label{
+  font-family:var(--f-display);font-size:0.92rem;color:var(--tinta-media);
+  text-transform:none;letter-spacing:0;font-weight:400;cursor:pointer;line-height:1.5;
+}
+.privacidad-fila label a{color:var(--verde);text-decoration:underline}
+.form-submit{
+  width:100%;font-family:var(--f-display);font-weight:600;font-size:1.05rem;
+  background:var(--verde-vivo);color:var(--verde-negro);border:none;border-radius:999px;
+  padding:1.05rem 1.5rem;cursor:pointer;transition:transform .18s,box-shadow .18s;
+  box-shadow:0 2px 0 rgba(0,110,70,0.55);
+}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,196,125,0.4)}
+.form-submit:disabled{opacity:0.7;cursor:wait;transform:none}
+.form-micro{text-align:center;font-family:var(--f-mono);font-size:0.81rem;color:var(--tinta-suave);margin-top:0.9rem}
+.form-exito{display:none;text-align:center;padding:1.2rem 0 0.4rem}
+.form-exito .icono{font-size:2rem;margin-bottom:0.5rem}
+
+/* ---------- modal del formulario ---------- */
+.cierre-grid{display:block}
+.cierre-acciones{margin:0 0 1.8rem}
+.cierre-acciones .btn{width:100%;max-width:420px}
+#contacto .form-copy{max-width:620px}
+#contacto .form-copy p{color:#B9CFC2}
+
+.modal{
+  position:fixed;inset:0;z-index:400;display:none;
+  align-items:center;justify-content:center;padding:1rem;
+}
+.modal.abierto{display:flex}
+.modal-fondo{
+  position:absolute;inset:0;background:rgba(8,20,14,0.62);
+  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+  animation:fundir .22s ease forwards;
+}
+@keyframes fundir{from{opacity:0}to{opacity:1}}
+.modal-caja{
+  position:relative;z-index:1;width:100%;max-width:560px;flex:0 0 auto;
+  max-height:92vh;max-height:92svh;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  background:var(--papel);border-radius:16px;padding:2rem 1.5rem 1.6rem;
+  box-shadow:0 30px 80px rgba(0,0,0,0.45);
+  animation:subirModal .28s cubic-bezier(.2,.8,.3,1) forwards;
+}
+@media(min-width:640px){.modal-caja{padding:2.4rem 2.2rem 1.8rem}}
+@keyframes subirModal{from{opacity:0;transform:translateY(18px) scale(0.98)}to{opacity:1;transform:none}}
+.modal-cerrar{
+  position:absolute;top:0.9rem;right:0.9rem;z-index:2;
+  width:38px;height:38px;border-radius:50%;border:1px solid var(--linea);
+  background:var(--papel-2);color:var(--tinta-media);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:background .15s,color .15s;
+}
+.modal-cerrar:hover{background:var(--superficie);color:var(--tinta)}
+.modal-cerrar svg{width:16px;height:16px}
+.modal-cab{margin-bottom:1.6rem;padding-right:3rem}
+.modal-cab h2{font-size:clamp(1.4rem,5.2vw,1.9rem);margin-bottom:0.6rem;text-wrap:balance}
+.modal-sub{color:var(--tinta-media);font-size:0.92rem}
+.modal .form-papel{background:transparent;box-shadow:none;padding:0;transform:none;color:var(--tinta)}
+.modal .form-papel-cab{display:none}
+body.modal-abierto{overflow:hidden}
+
+/* ---------- footer ---------- */
+footer{background:var(--verde-negro);color:#8FAA9B;padding:2.4rem 0;border-top:1px solid rgba(255,255,255,0.08)}
+.footer-fila{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.2rem}
+.footer-logo{font-weight:700;font-size:1.15rem;color:#fff;text-decoration:none}
+.footer-logo .menos{color:var(--verde-vivo)}
+.footer-legal{font-size:0.85rem;max-width:520px}
+.footer-contacto{font-family:var(--f-mono);font-size:0.85rem;display:flex;gap:1.4rem;flex-wrap:wrap}
+.footer-contacto a{color:#B9CFC2;text-decoration:none}
+.footer-contacto a:hover{color:var(--verde-vivo)}
+
+/* ---------- whatsapp float ---------- */
+.wa-float{
+  position:fixed;bottom:1.6rem;right:1.6rem;z-index:200;
+  width:56px;height:56px;border-radius:50%;background:var(--verde-vivo);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(0,140,90,0.4);
+  opacity:0;visibility:hidden;transform:scale(0.7);
+  transition:opacity .3s ease,transform .3s cubic-bezier(.5,1.5,.5,1),visibility .3s;
+}
+body.wa-visible .wa-float{opacity:1;visibility:visible;transform:scale(1)}
+body.wa-visible .wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:28px;height:28px;fill:var(--verde-negro)}
+
+/* ---------- CTAs a ancho completo en móvil ---------- */
+@media(max-width:719px){
+  .crono-cta{flex-direction:column;align-items:stretch;gap:0.9rem;text-align:center}
+  .crono-cta .btn,
+  .cta-banda .btn,
+  .cierre-acciones .btn{width:100%;max-width:none}
+  .crono-cta .hero-micro{text-align:center}
+}
+
+/* ---------- reveals ---------- */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ---------- CTA intermedio con corrección ---------- */
+.cta-banda{padding:4.2rem 0;text-align:center}
+.cta-banda h2{font-size:clamp(1.8rem,4.5vw,2.7rem);margin-bottom:1.6rem}
+.cta-banda .mano{font-size:0.62em;vertical-align:0.28em;margin-left:0.25em}
+
+@media(max-width:420px){
+  .anotacion{font-size:1.02rem}
+  .factura-nuevo{font-size:1.85rem}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms !important;animation-delay:0s !important;transition-duration:0.01ms !important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+  body .anotacion{opacity:1;transform:rotate(-1.2deg)}
+  body .factura-nuevo{opacity:1}
+  body .importe-viejo::after{transform:rotate(-4deg) scaleX(1)}
+  body .factura-nuevo svg path{stroke-dashoffset:0}
+  body .sello{transform:rotate(7deg) scale(1)}
+  body .hero h1 .subrayado::after{transform:scaleX(1)}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="contenedor nav">
+    <a href="#" class="logo">Factu<span class="menos">Menos</span></a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#calculadora">Calculadora</a>
+      <a href="#garantias">Garantías</a>
+      <a href="#faq">FAQ</a>
+      <button type="button" class="btn btn-primario nav-cta abre-form">Análisis gratuito</button>
+    </nav>
+    <button class="hamburger" aria-label="Abrir menú" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="menu-movil" id="mobile-menu">
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#calculadora">Calculadora</a>
+    <a href="#garantias">Garantías</a>
+    <a href="#faq">Preguntas frecuentes</a>
+    <button type="button" class="btn btn-verde abre-form">Quiero mi análisis gratis →</button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="contenedor hero-grid">
+    <div class="hero-texto">
+      <div class="hero-bloque">
+      <div class="hero-chip"><span class="estrella">★</span> <b>4,9</b>&nbsp;en Trustpilot · 227 opiniones</div>
+      <h1>Baja tu factura<br>un <span class="subrayado"><span id="hero-pct">0</span>&nbsp;%</span>.</h1>
+      <p class="hero-sub"><span class="clave">Móvil, fibra y TV.</span> Mantienes todos tus servicios y tu misma compañía: lo único que baja es el precio.</p>
+      <div class="hero-acciones">
+        <button type="button" class="btn btn-verde btn-grande abre-form">Quiero mi análisis gratis</button>
+      </div>
+      <p class="hero-micro"><b>Análisis gratis</b> · Sin compromiso</p>
+      </div>
+      <a class="hero-pista" href="#factura-ejemplo" aria-label="Ver un ejemplo de factura analizada">
+        <span>Mira un ejemplo real</span>
+        <svg viewBox="0 0 24 14" aria-hidden="true"><path d="M2 2 L12 11 L22 2" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <!-- La factura corregida — firma visual -->
+    <div class="factura-marco" id="factura-ejemplo" aria-label="Ejemplo de factura analizada por FactuMenos">
+      <div class="factura">
+        <div class="sello">Mismo servicio · menos precio</div>
+        <div class="factura-cab">
+          <span class="titulo">FACTURA</span>
+          <span class="mes">TU OPERADORA · MENSUAL</span>
+        </div>
+        <div class="factura-linea">
+          <span class="concepto">Cuota móvil (2 líneas)</span>
+          <span class="importe">45,90</span>
+          <span class="anotacion a1">esto lo podemos bajar</span>
+        </div>
+        <div class="factura-linea">
+          <span class="concepto">Fibra 600 Mb</span>
+          <span class="importe">39,90</span>
+          <span class="anotacion a2">aquí conseguimos mejor precio</span>
+        </div>
+        <div class="factura-linea">
+          <span class="concepto">Televisión</span>
+          <span class="importe">22,00</span>
+          <span class="anotacion a3">mismo servicio, lo negociamos por menos</span>
+        </div>
+        <div class="factura-linea">
+          <span class="concepto">Servicios adicionales</span>
+          <span class="importe">9,90</span>
+          <span class="anotacion a4">esto también lo negociamos nosotros</span>
+        </div>
+        <div class="factura-total">
+          <span>TOTAL</span>
+          <span class="importe-viejo">117,70&nbsp;€</span>
+        </div>
+        <div class="factura-nuevo">
+          58,85&nbsp;€
+          <svg viewBox="0 0 140 60" aria-hidden="true"><path d="M12 30 C 12 10, 55 4, 78 7 C 108 10, 132 18, 130 32 C 128 48, 92 56, 62 54 C 32 52, 10 46, 12 30 C 13 20, 30 12, 48 10"/></svg>
+        </div>
+      </div>
+      <p class="factura-nota"><b>Los mismos servicios, con la misma compañía.</b> Solo cambia el precio.<br>Ejemplo ilustrativo basado en nuestro ahorro medio (50&nbsp;%).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CINTA DE CIFRAS ============ -->
+<div class="cinta">
+  <div class="contenedor">
+    <p class="cinta-titulo">FactuMenos en cifras</p>
+    <div class="cinta-grid">
+      <div class="cinta-item">
+        <span class="cinta-etq">Ahorro medio</span>
+        <span class="cinta-num destacado">50<span class="u">%</span></span>
+        <span class="cinta-txt">conseguido en las facturas que gestionamos</span>
+      </div>
+      <div class="cinta-item">
+        <span class="cinta-etq">Análisis</span>
+        <span class="cinta-num">24<span class="u">h</span></span>
+        <span class="cinta-txt">es lo que tardamos en darte tu cifra</span>
+      </div>
+      <div class="cinta-item">
+        <span class="cinta-etq">Si no hay ahorro</span>
+        <span class="cinta-num">0<span class="u">€</span></span>
+        <span class="cinta-txt">no pagas nada, ni por el análisis</span>
+      </div>
+      <div class="cinta-item">
+        <span class="cinta-etq">Descuento</span>
+        <span class="cinta-num">6–12<span class="u">meses</span></span>
+        <span class="cinta-txt">de duración garantizada por contrato</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CÓMO FUNCIONA ============ -->
+<section id="como-funciona">
+  <div class="contenedor">
+    <div class="reveal">
+      <p class="eyebrow">El proceso</p>
+      <h2>Tú nos envías tu factura.<br>Del resto nos encargamos nosotros.</h2>
+      <p class="seccion-intro">Nosotros tratamos con tu operadora. Tú conservas todos tus servicios y solo ves cómo baja el precio.</p>
+    </div>
+    <div class="crono">
+      <div class="crono-paso reveal">
+        <p class="crono-dia">Día 0</p>
+        <h3>Nos mandas tu factura</h3>
+        <p>El PDF o una captura desde la app de tu operadora es suficiente. La revisamos línea a línea para detectar cada concepto donde estás pagando por encima.</p>
+        <span class="crono-tag">gratis, sin compromiso</span>
+      </div>
+      <div class="crono-paso reveal">
+        <p class="crono-dia">Día 1</p>
+        <h3>Te decimos cuánto puedes ahorrar</h3>
+        <p>En menos de 24 horas tienes el análisis. Si no hay margen real de mejora, te lo decimos con transparencia y aquí termina todo.</p>
+        <span class="crono-tag">respuesta en 24 h</span>
+      </div>
+      <div class="crono-paso reveal">
+        <p class="crono-dia">Semanas 2–4</p>
+        <h3>Baja el precio. Todo lo demás sigue igual</h3>
+        <p>Negociamos el descuento con tu misma compañía. Conservas tus líneas, tu velocidad, tus canales y tu número: solo cambia lo que pagas.</p>
+        <span class="crono-tag">tú no haces nada</span>
+      </div>
+    </div>
+    <div class="crono-cta reveal">
+      <button type="button" class="btn btn-verde abre-form">Quiero mi análisis gratis</button>
+      <span class="hero-micro">Respuesta en menos de 24 h</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CALCULADORA ============ -->
+<section id="calculadora">
+  <div class="contenedor">
+    <div class="calc-cab reveal">
+      <p class="eyebrow">Calculadora de ahorro</p>
+      <h2>Calcula tu ahorro anual.</h2>
+    </div>
+    <div class="calc-panel reveal">
+      <div class="calc-control">
+        <div class="calc-grupo">
+          <label class="calc-label" for="operadora">Tu operadora actual</label>
+          <select id="operadora" class="calc-select" onchange="calcular()">
+            <option value="">Selecciona tu operadora</option>
+            <option>Movistar</option>
+            <option>Vodafone</option>
+            <option>Orange</option>
+            <option>MásMóvil</option>
+            <option>Yoigo</option>
+            <option>Digi</option>
+            <option value="otra">Otra</option>
+          </select>
+        </div>
+        <div class="calc-grupo">
+          <div class="calc-top">
+            <span class="calc-label">Factura mensual actual</span>
+            <span class="calc-actual"><span id="lbl-factura">200 €</span><small>/mes</small></span>
+          </div>
+          <input type="range" id="factura" min="50" max="400" step="5" value="200" oninput="calcular()" onchange="calcular()" aria-label="Tu factura mensual actual en euros">
+          <div class="calc-rango"><span>50 €</span><span>400 €</span></div>
+        </div>
+      </div>
+      <div class="calc-resultado">
+        <div class="calc-fila"><span class="c">Nueva factura estimada</span><span class="v" id="nueva-factura">100 €/mes</span></div>
+        <div class="calc-fila"><span class="c">Cuota FactuMenos</span><span class="v" id="comision">19,99 €/mes</span></div>
+        <div class="calc-anual">
+          <div class="ca-item">
+            <span class="ca-etq">Pago anual actual</span>
+            <span class="ca-val tach" id="pago-actual">2.400 €/año</span>
+          </div>
+          <span class="ca-fl" aria-hidden="true">→</span>
+          <div class="ca-item">
+            <span class="ca-etq">Pago anual estimado</span>
+            <span class="ca-val nuevo" id="pago-nuevo">1.200 €/año</span>
+          </div>
+        </div>
+        <div class="calc-quedas">
+          <span class="c">Tu ahorro anual estimado</span>
+          <span class="v" id="ahorro-anual">960 €</span>
+        </div>
+        <p class="calc-pie">Continúas con <span id="op-nombre">tu operadora actual</span> y mantienes todos tus servicios. Nuestra cuota se calcula sobre el ahorro conseguido: si no hay ahorro, no hay cuota.</p>
+        <div class="calc-cta"><button type="button" class="btn btn-verde abre-form">Solicitar análisis gratuito</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GARANTÍAS / CLÁUSULAS ============ -->
+<section id="garantias">
+  <div class="contenedor">
+    <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto 2.8rem">
+      <p class="eyebrow" style="justify-content:center">Sin letra pequeña</p>
+      <h2>Lo que te garantizamos,<br>por escrito.</h2>
+      <p style="color:var(--tinta-media)">Nos dedicamos a leer contratos, así que el nuestro es corto y claro. Estas cuatro condiciones van firmadas, siempre.</p>
+    </div>
+    <div class="doc reveal">
+      <div class="doc-cab"><span>Condiciones del servicio</span><span>Resumen en lenguaje claro</span></div>
+      <div class="clausula">
+        <span class="clausula-num">§ 1</span>
+        <div>
+          <h3>Si no ahorras, no pagas nada</h3>
+          <p>El análisis es 100&nbsp;% gratuito. Si no encontramos forma de bajarte la factura, te lo decimos y aquí termina todo. Sin coste.</p>
+        </div>
+      </div>
+      <div class="clausula">
+        <span class="clausula-num">§ 2</span>
+        <div>
+          <h3>Conservas todo: compañía y servicios</h3>
+          <p>No cambiamos tu operadora ni tocamos lo que tienes contratado. Tus líneas, tu velocidad de fibra, tus canales y tu número siguen igual. Solo optimizamos el precio de tu contrato actual.</p>
+        </div>
+      </div>
+      <div class="clausula">
+        <span class="clausula-num">§ 3</span>
+        <div>
+          <h3>Contrato claro y firmado</h3>
+          <p>Condiciones pactadas, duración fija y sin cláusulas ocultas ni sorpresas. Todo por escrito antes de empezar.</p>
+        </div>
+      </div>
+      <div class="clausula">
+        <span class="clausula-num">§ 4</span>
+        <div>
+          <h3>El ahorro empieza desde el primer mes</h3>
+          <p>No esperas meses para notar la diferencia. Desde la primera factura ya ves el dinero que se queda contigo, cada mes.</p>
+        </div>
+      </div>
+      <div class="doc-firma">
+        <p class="txt">Este resumen recoge las condiciones que firmamos con cada cliente antes de gestionar ningún descuento.</p>
+        <span class="rubrica">Factu<span>Menos</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA INTERMEDIO ============ -->
+<div class="cta-banda">
+  <div class="contenedor reveal">
+    <h2>Empieza a pagar <span class="tachado-rojo">de más</span><span class="mano">lo justo</span></h2>
+    <button type="button" class="btn btn-verde abre-form">Quiero mi análisis gratis</button>
+  </div>
+</div>
+
+<!-- ============ RESULTADOS ============ -->
+<section id="resultados" style="padding-top:1rem">
+  <div class="contenedor">
+    <div class="reveal">
+      <p class="eyebrow">Resultados</p>
+      <h2>Los números hasta hoy.</h2>
+      <p class="seccion-intro">Sin promesas: lo que ya está pasando en las facturas de nuestros clientes.</p>
+    </div>
+    <div class="kpis reveal">
+      <div class="kpi">
+        <p class="kpi-num"><em><span id="ahorroNumber">0</span>.000&nbsp;€</em></p>
+        <p class="kpi-txt">en ahorro acumulado por nuestros clientes</p>
+      </div>
+      <div class="kpi">
+        <p class="kpi-num"><span id="clientNumber">0</span>+</p>
+        <p class="kpi-txt">clientes ahorrando cada mes</p>
+      </div>
+      <div class="kpi">
+        <p class="kpi-num">4,9&nbsp;<em>★</em></p>
+        <p class="kpi-txt">227 opiniones en <a href="https://www.trustpilot.com/review/factumenos.es" target="_blank" rel="noopener">Trustpilot</a></p>
+      </div>
+    </div>
+    <div class="testimonios">
+      <article class="testimonio reveal">
+        <p class="testimonio-cifra"><span class="antes">340&nbsp;€</span><span class="flecha">→</span><span class="despues">170&nbsp;€/mes</span></p>
+        <p>«Pagaba 340&nbsp;€ al mes y pensaba que era lo normal. En tres semanas pasé a pagar 170&nbsp;€. Increíble que la compañía no te lo ofrezca directamente.»</p>
+        <div class="testimonio-pie">
+          <span class="avatar">MR</span>
+          <div><b>Manuel Rodrigo</b><span>Madrid</span></div>
+          <span class="estrellas">★★★★★</span>
+        </div>
+      </article>
+      <article class="testimonio reveal">
+        <p class="testimonio-cifra"><span class="despues">−200&nbsp;€/mes</span></p>
+        <p>«Lo que más me convenció fue que si no funcionaba no pagaba nada. Funcionó. Ahorro más de 200&nbsp;€ al mes y no tuve que hacer nada yo.»</p>
+        <div class="testimonio-pie">
+          <span class="avatar">LP</span>
+          <div><b>Laura Palomino</b><span>Barcelona</span></div>
+          <span class="estrellas">★★★★★</span>
+        </div>
+      </article>
+      <article class="testimonio reveal">
+        <p class="testimonio-cifra"><span class="despues">Nueva factura en 15 días</span></p>
+        <p>«Pensé que era demasiado bueno para ser verdad. Me enviaron el análisis en 24 horas y a los 15 días ya tenía la nueva factura.»</p>
+        <div class="testimonio-pie">
+          <span class="avatar">JA</span>
+          <div><b>Javier Almeida</b><span>Sevilla</span></div>
+          <span class="estrellas">★★★★★</span>
+        </div>
+      </article>
+      <article class="testimonio reveal">
+        <p class="testimonio-cifra"><span class="despues">−130&nbsp;€/mes</span> <span class="flecha">·</span> <span class="despues">≈&nbsp;800&nbsp;€ en 6 meses</span></p>
+        <p>«Llevo 6 meses ahorrando 130&nbsp;€ al mes. Ya me he ahorrado casi 800&nbsp;€ y me quedan otros 6 meses. Ojalá lo hubiera hecho antes.»</p>
+        <div class="testimonio-pie">
+          <span class="avatar">CS</span>
+          <div><b>Carmen Soriano</b><span>Valencia</span></div>
+          <span class="estrellas">★★★★★</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="contenedor">
+    <div class="reveal">
+      <p class="eyebrow">Dudas frecuentes</p>
+      <h2>Las preguntas de siempre,<br>respondidas.</h2>
+    </div>
+    <div class="faq-lista">
+      <div class="faq-item">
+        <button class="faq-preg" aria-expanded="false" onclick="toggleFaq(this)">¿Tengo que cambiarme de compañía?<span class="faq-mas">+</span></button>
+        <div class="faq-resp"><p>No. Seguirás siendo cliente de tu operadora actual. Lo que hacemos es renegociar y optimizar tu contrato para conseguir el mayor descuento posible sin que tengas que cambiar nada.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-preg" aria-expanded="false" onclick="toggleFaq(this)">¿Qué pasa si mi factura es difícil de bajar?<span class="faq-mas">+</span></button>
+        <div class="faq-resp"><p>Por eso hacemos el análisis primero y gratis. Si vemos que no hay margen de mejora real, te lo decimos con total transparencia antes de seguir. Solo avanzamos cuando tenemos claro que hay ahorro para ti.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-preg" aria-expanded="false" onclick="toggleFaq(this)">¿Cómo funciona el servicio exactamente?<span class="faq-mas">+</span></button>
+        <div class="faq-resp"><p>Analizamos tu factura, identificamos el descuento y lo gestionamos todo por ti. Una vez activo, el ahorro se refleja directamente en tu factura cada mes. Tú no tienes que hacer absolutamente nada.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-preg" aria-expanded="false" onclick="toggleFaq(this)">¿Qué pasa cuando termina el descuento?<span class="faq-mas">+</span></button>
+        <div class="faq-resp"><p>Tu factura volvería a su precio habitual. Cuando eso ocurra, nos puedes contactar de nuevo y revisamos tu situación para analizar qué nuevas opciones de descuento hay disponibles para el siguiente periodo.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-preg" aria-expanded="false" onclick="toggleFaq(this)">¿Cuánto tiempo tarda en verse el ahorro?<span class="faq-mas">+</span></button>
+        <div class="faq-resp"><p>Normalmente entre 2 y 4 semanas desde que firmamos el acuerdo. En la mayoría de casos el cambio se refleja ya en la siguiente factura mensual.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-preg" aria-expanded="false" onclick="toggleFaq(this)">¿Para empresas también funciona?<span class="faq-mas">+</span></button>
+        <div class="faq-resp"><p>Sí. Trabajamos tanto con particulares como con empresas. Si tienes varias líneas, fibra u otros servicios contratados, podemos analizar toda tu factura y ayudarte a optimizar cada concepto.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CIERRE ============ -->
+<section id="contacto">
+  <div class="contenedor cierre-grid">
+    <div class="form-copy reveal">
+      <p class="eyebrow">Empieza hoy</p>
+      <h2>Tu factura, a examen.<br>Gratis y en 24 horas.</h2>
+      <p>Mándanos tu factura y te decimos <b>cuánto puedes ahorrar</b>. Si no encontramos margen, te lo decimos igual: gratis y sin compromiso.</p>
+      <ul class="form-puntos">
+        <li><span class="check">✓</span> Análisis gratuito con respuesta en menos de 24 h</li>
+        <li><span class="check">✓</span> Mantienes todos tus servicios, tu número y tu compañía</li>
+        <li><span class="check">✓</span> Solo cobramos si te ahorramos dinero</li>
+      </ul>
+      <div class="cierre-acciones">
+        <button type="button" class="btn btn-verde btn-grande abre-form">Quiero mi análisis gratis</button>
+      </div>
+      <div class="form-alt">
+        ¿Prefieres hablarlo? Escríbenos por <a href="https://wa.me/34660309778?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20me%20gustar%C3%ADa%20saber%20si%20pod%C3%A9is%20ayudarme%20a%20reducir%20mi%20factura" target="_blank" rel="noopener">WhatsApp</a> o al <a href="tel:+34660309778">660&nbsp;30&nbsp;97&nbsp;78</a>.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODAL DEL FORMULARIO ============ -->
+<div class="modal" id="modal-form" aria-hidden="true">
+  <div class="modal-fondo" data-cierra-modal></div>
+  <div class="modal-caja" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" tabindex="-1">
+    <button type="button" class="modal-cerrar" data-cierra-modal aria-label="Cerrar formulario">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4 L16 16 M16 4 L4 16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="modal-cab">
+      <p class="eyebrow">Análisis de factura</p>
+      <h2 id="modal-titulo">Solicita tu análisis gratuito</h2>
+      <p class="modal-sub">Sin compromiso ni cambio de compañía.</p>
+    </div>
+    <div class="form-papel">
+        <div class="form-papel-cab"><span>Solicitud de análisis</span><span><em>Gratuito</em></span></div>
+        <form id="forminit-form">
+          <div class="form-grid">
+            <div class="form-grupo">
+              <label for="f-nombre">Nombre y apellido <span style="color:var(--rojo)">*</span></label>
+              <input type="text" id="f-nombre" name="fi-sender-fullName" placeholder="Tu nombre y apellido" autocomplete="name">
+              <div id="error-nombre" class="form-error">Por favor, introduce tu nombre.</div>
+            </div>
+            <div class="form-grupo">
+              <label for="f-tel">Teléfono <span style="color:var(--rojo)">*</span></label>
+              <div class="tel-campo">
+                <span class="tel-prefijo">🇪🇸 +34</span>
+                <input type="tel" id="f-tel" placeholder="600 000 000" inputmode="numeric" maxlength="11" autocomplete="tel-national" oninput="formatearTel(this)">
+                <input type="hidden" id="f-tel-completo" name="fi-sender-phone">
+              </div>
+              <div id="error-tel" class="form-error">Por favor, introduce un teléfono válido (9 cifras).</div>
+            </div>
+            <div class="form-grupo">
+              <label for="f-email">Email</label>
+              <input type="email" id="f-email" name="fi-sender-email" placeholder="tu@email.com" autocomplete="email">
+              <div id="error-email" class="form-error">Por favor, introduce un email válido.</div>
+            </div>
+            <div class="form-grupo">
+              <label for="f-factura">Factura mensual aprox.</label>
+              <select id="f-factura" name="fi-select-facturaMensual">
+                <option value="">Selecciona...</option>
+                <option>50 – 100 €/mes</option>
+                <option>100 – 200 €/mes</option>
+                <option>200 – 300 €/mes</option>
+                <option>300 – 400 €/mes</option>
+                <option>Más de 400 €/mes</option>
+              </select>
+            </div>
+            <div class="form-grupo full">
+              <label>Adjunta tu factura (PDF o captura)</label>
+              <div class="drop-zone" onclick="document.getElementById('f-archivo').click()" id="drop-zone">
+                <div class="clip">📎</div>
+                <div class="txt" id="archivo-label">Toca para adjuntar · PDF, JPG o PNG</div>
+              </div>
+              <input type="file" id="f-archivo" name="fi-file-facturaArchivo" accept="image/*,.pdf" style="display:none" onchange="archivoSeleccionado(this)">
+            </div>
+            <div class="form-grupo full privacidad-fila">
+              <input type="checkbox" id="f-privacidad">
+              <label for="f-privacidad">He leído y acepto las <a href="privacidad.html" target="_blank">condiciones</a>.</label>
+            </div>
+            <div id="error-privacidad" class="form-error" style="grid-column:1/-1;padding:0.2rem 0">Por favor, acepta las condiciones para continuar.</div>
+            <div id="error-envio" class="form-error" style="grid-column:1/-1;text-align:center;padding:0.2rem 0"></div>
+            <div class="form-grupo full">
+              <button type="submit" class="form-submit">Solicitar análisis gratuito</button>
+            </div>
+          </div>
+        </form>
+        <p class="form-micro">Respuesta en menos de 24 h · Tus datos solo se usan para tu análisis</p>
+        <div class="form-exito" id="form-exito">
+          <div class="icono">✅</div>
+          <p><b>¡Información enviada con éxito!</b><br>Nos pondremos en contacto contigo en las próximas 24 horas.</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="contenedor footer-fila">
+    <a href="#" class="footer-logo">Factu<span class="menos">Menos</span></a>
+    <div class="footer-contacto">
+      <a href="tel:+34660309778">+34 660 309 778</a>
+      <a href="mailto:contacto@factumenos.es">contacto@factumenos.es</a>
+    </div>
+    <p class="footer-legal">© 2025 FactuMenos · Servicio de optimización de contratos de telecomunicaciones · Madrid, España</p>
+  </div>
+</footer>
+
+<!-- WhatsApp flotante -->
+<a class="wa-float" href="https://wa.me/34660309778?text=Hola%2C%20he%20visto%20vuestra%20web%20y%20me%20gustar%C3%ADa%20saber%20si%20pod%C3%A9is%20ayudarme%20a%20reducir%20mi%20factura" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.65-1.03-5.14-2.9-7.01A9.84 9.84 0 0 0 12.04 2zm0 18.14c-1.48 0-2.94-.4-4.2-1.15l-.3-.18-3.15.83.84-3.07-.2-.31a8.26 8.26 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.2 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z"/></svg>
+</a>
+
+<script src="https://forminit.com/sdk/v1/forminit.js"></script>
+<script>
+/* ---------- menú móvil ---------- */
+function toggleMenu(){
+  const menu=document.getElementById('mobile-menu');
+  const btn=document.querySelector('.hamburger');
+  menu.classList.toggle('abierto');
+  btn.classList.toggle('abierto');
+}
+
+/* ---------- scroll suave + cierre menú ---------- */
+document.addEventListener('DOMContentLoaded',function(){
+  document.body.classList.add('cargado');
+  contarTitular();
+  document.querySelectorAll('a[href^="#"]').forEach(link=>{
+    link.addEventListener('click',function(e){
+      const href=this.getAttribute('href');
+      if(href==='#'){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});return;}
+      const target=document.querySelector(href);
+      if(target){
+        e.preventDefault();
+        document.getElementById('mobile-menu').classList.remove('abierto');
+        document.querySelector('.hamburger').classList.remove('abierto');
+        setTimeout(()=>{target.scrollIntoView({behavior:'smooth',block:'start'});},50);
+      }
+    });
+  });
+});
+
+/* ---------- el 50 % del titular cuenta desde 0 ---------- */
+function contarTitular(){
+  const el=document.getElementById('hero-pct');
+  if(!el)return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent='50';return;}
+  const destino=50,duracion=1200,retardo=280;
+  setTimeout(()=>{
+    const inicio=performance.now();
+    function paso(ahora){
+      const t=Math.min((ahora-inicio)/duracion,1);
+      const ease=1-Math.pow(1-t,3);           // desacelera al final
+      el.textContent=Math.round(destino*ease);
+      if(t<1)requestAnimationFrame(paso);
+      else el.textContent=destino;
+    }
+    requestAnimationFrame(paso);
+  },retardo);
+}
+
+/* ---------- calculadora (fórmula original intacta) ---------- */
+function calcular(){
+  const slider=document.getElementById('factura');
+  const f=parseInt(slider.value);
+  const min=parseInt(slider.min);
+  const max=parseInt(slider.max);
+  const pct=((f-min)/(max-min))*100;
+  slider.style.background=`linear-gradient(to right, var(--verde) ${pct}%, var(--linea) ${pct}%)`;
+
+  document.getElementById('lbl-factura').textContent=f+' €';
+  const ahorro=Math.round(f*0.5);
+  const nueva=f-ahorro;
+  const comisionRaw=ahorro*0.20;
+  const comisionFloor=Math.floor(comisionRaw)-0.01;
+  const comisionDisplay=comisionFloor.toFixed(2).replace('.',',');
+  const ahorroNeto=Math.floor((ahorro-comisionFloor)*12);
+  document.getElementById('nueva-factura').textContent=nueva+' €/mes';
+  document.getElementById('comision').textContent=comisionDisplay+' €/mes';
+  document.getElementById('ahorro-anual').textContent=ahorroNeto.toLocaleString('es-ES')+' €';
+  document.getElementById('pago-actual').textContent=(f*12).toLocaleString('es-ES')+' €/año';
+  document.getElementById('pago-nuevo').textContent=(nueva*12).toLocaleString('es-ES')+' €/año';
+
+  /* la operadora solo personaliza el texto: no interviene en el cálculo */
+  const sel=document.getElementById('operadora');
+  const op=document.getElementById('op-nombre');
+  if(sel&&op){
+    const v=sel.value;
+    op.textContent=(v===''||v==='otra')?'tu operadora actual':v;
+  }
+}
+calcular();
+
+/* ---------- KPIs con cuenta ascendente ---------- */
+function animateKPI(elementId, targetNumber, duration = 2000, delay = 0){
+  const element=document.getElementById(elementId);
+  if(!element)return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    element.textContent=targetNumber;return;
+  }
+  setTimeout(()=>{
+    const startTime=Date.now();
+    function update(){
+      const elapsed=Date.now()-startTime;
+      const progress=Math.min(elapsed/duration,1);
+      const easeProgress=progress<0.5?2*progress*progress:-1+(4-2*progress)*progress;
+      element.textContent=Math.floor(targetNumber*easeProgress);
+      if(progress<1){requestAnimationFrame(update);}
+      else{element.textContent=targetNumber;}
+    }
+    requestAnimationFrame(update);
+  },delay);
+}
+let kpisLanzados=false;
+const kpiObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting&&!kpisLanzados){
+      kpisLanzados=true;
+      animateKPI('ahorroNumber',351,2000,200);
+      animateKPI('clientNumber',521,2000,400);
+    }
+  });
+},{threshold:0.3});
+const kpisEl=document.querySelector('.kpis');
+if(kpisEl)kpiObserver.observe(kpisEl);
+
+/* ---------- WhatsApp: aparece al pasar del hero ---------- */
+const heroEl=document.querySelector('.hero');
+if(heroEl){
+  const waObserver=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      document.body.classList.toggle('wa-visible',!e.isIntersecting);
+    });
+  },{threshold:0,rootMargin:'-40% 0px 0px 0px'});
+  waObserver.observe(heroEl);
+}else{
+  document.body.classList.add('wa-visible');
+}
+
+/* ---------- reveals al hacer scroll ---------- */
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+/* ---------- FAQ ---------- */
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const resp=item.querySelector('.faq-resp');
+  const abierto=item.classList.contains('abierto');
+  document.querySelectorAll('.faq-item.abierto').forEach(i=>{
+    i.classList.remove('abierto');
+    i.querySelector('.faq-resp').style.maxHeight=null;
+    i.querySelector('.faq-preg').setAttribute('aria-expanded','false');
+  });
+  if(!abierto){
+    item.classList.add('abierto');
+    resp.style.maxHeight=resp.scrollHeight+'px';
+    btn.setAttribute('aria-expanded','true');
+  }
+}
+
+/* ---------- teléfono: solo cifras, agrupadas de tres en tres ---------- */
+function formatearTel(input){
+  let cifras=input.value.replace(/\D/g,'');
+  // si pegan el número con prefijo (+34, 0034), lo descartamos
+  if(cifras.length>9&&cifras.startsWith('0034'))cifras=cifras.slice(4);
+  if(cifras.length>9&&cifras.startsWith('34'))cifras=cifras.slice(2);
+  cifras=cifras.slice(0,9);
+  input.value=cifras.replace(/(\d{3})(?=\d)/g,'$1 ').trim();
+}
+
+/* ---------- adjuntar archivo ---------- */
+function archivoSeleccionado(input){
+  const label=document.getElementById('archivo-label');
+  if(input.files&&input.files[0]){
+    label.textContent='✓ '+input.files[0].name;
+    label.style.color='var(--verde)';
+    document.getElementById('drop-zone').style.borderColor='var(--verde)';
+  }
+}
+
+/* ---------- modal del formulario ---------- */
+const modal=document.getElementById('modal-form');
+const modalCaja=modal.querySelector('.modal-caja');
+let disparador=null;
+
+function abrirModal(origen){
+  disparador=origen||null;
+  modal.classList.add('abierto');
+  modal.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-abierto');
+  // cerrar el menú móvil si estaba abierto
+  document.getElementById('mobile-menu').classList.remove('abierto');
+  document.querySelector('.hamburger').classList.remove('abierto');
+  modalCaja.scrollTop=0;
+  modalCaja.focus({preventScroll:true});
+}
+
+function cerrarModal(){
+  modal.classList.remove('abierto');
+  modal.setAttribute('aria-hidden','true');
+  document.body.classList.remove('modal-abierto');
+  if(disparador&&typeof disparador.focus==='function')disparador.focus({preventScroll:true});
+}
+
+document.querySelectorAll('.abre-form').forEach(btn=>{
+  btn.addEventListener('click',()=>abrirModal(btn));
+});
+modal.querySelectorAll('[data-cierra-modal]').forEach(el=>{
+  el.addEventListener('click',cerrarModal);
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&modal.classList.contains('abierto'))cerrarModal();
+  // mantener el foco dentro del modal
+  if(e.key==='Tab'&&modal.classList.contains('abierto')){
+    const focos=modalCaja.querySelectorAll('button, input, select, textarea, a[href]');
+    if(!focos.length)return;
+    const primero=focos[0], ultimo=focos[focos.length-1];
+    if(e.shiftKey&&document.activeElement===primero){e.preventDefault();ultimo.focus();}
+    else if(!e.shiftKey&&document.activeElement===ultimo){e.preventDefault();primero.focus();}
+  }
+});
+
+/* ---------- envío del formulario (Forminit, flujo original intacto) ---------- */
+let forminit=null;
+try{
+  forminit=new Forminit();
+}catch(err){
+  console.warn('Forminit no disponible:',err);
+}
+
+document.getElementById('forminit-form').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const nombre=document.getElementById('f-nombre').value.trim();
+  const telDigits=document.getElementById('f-tel').value.trim().replace(/\s/g,'');
+  const email=document.getElementById('f-email').value.trim();
+  const errNombre=document.getElementById('error-nombre');
+  const errTel=document.getElementById('error-tel');
+  const errEmail=document.getElementById('error-email');
+  const errP=document.getElementById('error-privacidad');
+
+  if(!nombre){errNombre.style.display='block';errNombre.scrollIntoView({behavior:'smooth',block:'center'});return;}
+  errNombre.style.display='none';
+
+  if(!telDigits||!/^[0-9]{9}$/.test(telDigits)){errTel.style.display='block';errTel.scrollIntoView({behavior:'smooth',block:'center'});return;}
+  errTel.style.display='none';
+
+  if(email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){errEmail.style.display='block';errEmail.scrollIntoView({behavior:'smooth',block:'center'});return;}
+  errEmail.style.display='none';
+
+  if(!document.getElementById('f-privacidad').checked){errP.style.display='block';errP.scrollIntoView({behavior:'smooth',block:'center'});return;}
+  errP.style.display='none';
+
+  // Formatear el teléfono en E.164 (ej. +34600000000)
+  document.getElementById('f-tel-completo').value = '+34' + telDigits;
+
+  const btn=document.querySelector('.form-submit');
+  btn.textContent='Enviando...';
+  btn.disabled=true;
+
+  const formData = new FormData(e.target);
+
+  if(!forminit){
+    btn.textContent='Solicitar análisis gratuito';
+    btn.disabled=false;
+    const errEnvio=document.getElementById('error-envio');
+    errEnvio.textContent='No se ha podido conectar con el servicio de envío. Escríbenos por WhatsApp al 660 30 97 78.';
+    errEnvio.style.display='block';
+    errEnvio.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+
+  const { data, error } = await forminit.submit('j2cq7qqus19', formData);
+
+  if(error){
+    console.error('Forminit error:', error);
+    btn.textContent='Solicitar análisis gratuito';
+    btn.disabled=false;
+    const errEnvio=document.getElementById('error-envio');
+    errEnvio.textContent=error.message || 'Ha habido un error. Por favor inténtalo de nuevo.';
+    errEnvio.style.display='block';
+    errEnvio.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+
+  document.getElementById('error-envio').style.display='none';
+
+  // Redirigir a la página de gracias (dispara la conversión de GA4/Ads)
+  window.location.href='/gracias.html';
+});
+</script>
+</body>
+</html>
