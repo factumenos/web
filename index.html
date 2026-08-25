@@ -479,6 +479,16 @@ input[type=range]::-moz-range-thumb{
   width:16px;height:16px;border-radius:50%;background:var(--papel);
   border:1.5px solid var(--tinta);cursor:grab;
 }
+.calc-pista{display:none}
+@media(min-width:940px){
+  .calc-pista{
+    display:flex;align-items:center;gap:0.55rem;
+    font-family:var(--f-mono);font-size:0.77rem;color:var(--tinta-suave);
+    margin-top:-0.2rem;
+  }
+  .calc-pista .flechas{color:var(--verde);font-size:1rem;line-height:1;animation:vaiven 2.4s ease-in-out infinite}
+  @keyframes vaiven{0%,100%{transform:translateX(-2px)}50%{transform:translateX(2px)}}
+}
 .calc-fila-op{display:flex;align-items:center;justify-content:space-between;gap:0.8rem;padding-top:0.55rem;border-top:1px solid var(--linea)}
 .calc-select{
   font-family:var(--f-display);font-size:0.92rem;color:var(--tinta);
@@ -1040,6 +1050,7 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
           <span class="calc-actual"><span id="lbl-factura">200 €</span><small>/mes</small></span>
         </div>
         <input type="range" id="factura" min="50" max="400" step="5" value="200" oninput="calcular()" onchange="calcular()" aria-label="Tu factura mensual actual en euros">
+        <p class="calc-pista"><span class="flechas">↔</span> Mueve la barra hasta lo que pagas cada mes</p>
         <div class="calc-fila-op">
           <label class="calc-label" for="operadora">Mi operadora</label>
           <select id="operadora" class="calc-select" onchange="calcular()">
