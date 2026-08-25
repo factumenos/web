@@ -763,6 +763,21 @@ input[type=range]::-moz-range-thumb{
 #contacto .form-copy{max-width:620px}
 #contacto .form-copy p{color:#B9CFC2}
 
+/* en ordenador la sección se centra y los puntos van en fila */
+@media(min-width:940px){
+  #contacto .form-copy{max-width:820px;margin:0 auto;text-align:center}
+  #contacto .eyebrow{justify-content:center}
+  #contacto .form-copy p{margin-left:auto;margin-right:auto}
+  .form-puntos{
+    flex-direction:row;justify-content:center;gap:2.4rem;
+    margin:2.4rem auto 2.6rem;flex-wrap:wrap;
+  }
+  .form-puntos li{align-items:center}
+  .cierre-acciones{margin:0 0 2.2rem}
+  .cierre-acciones .btn{width:auto;padding-left:2.6rem;padding-right:2.6rem}
+  .form-alt{max-width:520px;margin:0 auto}
+}
+
 .modal{
   position:fixed;inset:0;z-index:400;display:none;
   align-items:center;justify-content:center;padding:1rem;
