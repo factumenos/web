@@ -491,6 +491,10 @@ input[type=range]::-moz-range-thumb{
 /* --- barras por mes --- */
 .calc-grafica{padding:1.4rem 1.1rem 1.2rem;background:var(--papel-2);border-top:1px solid var(--linea)}
 @media(min-width:940px){.calc-grafica{padding:1.9rem;border-top:none}}
+.grafica-titulo{
+  font-family:var(--f-mono);font-size:0.74rem;font-weight:600;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--tinta);margin-bottom:1.1rem;
+}
 .barras{display:flex;align-items:flex-end;gap:0.4rem}
 @media(min-width:940px){.barras{gap:0.9rem}}
 .barra{
@@ -1034,6 +1038,7 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
       </div>
 
       <div class="calc-grafica">
+        <p class="grafica-titulo">Tu factura mes a mes</p>
         <div class="barras" id="barras" role="group" aria-label="Tu factura mes a mes"></div>
       </div>
     </div>
@@ -1382,7 +1387,16 @@ function datos(){
   return {f,ahorro,nueva,cuota,pagoNuevo,ahorroMes,ahorroAnual};
 }
 
-const MESES=6;
+function mesesVisibles(){
+  return window.matchMedia('(min-width:940px)').matches ? 12 : 6;   // 12 en ordenador, 6 en móvil
+}
+let MESES=mesesVisibles();
+const NOMBRES_MES=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+function etiquetaMes(desplazamiento){
+  const hoy=new Date();
+  const d=new Date(hoy.getFullYear(), hoy.getMonth()+desplazamiento, 1);
+  return NOMBRES_MES[d.getMonth()];
+}
 let mesElegido=1;              // arranca en el primer mes con descuento
 let barrasCreadas=false;
 let graficaVista=false;        // las barras caen al entrar en pantalla
@@ -1399,7 +1413,7 @@ function crearBarras(){
                   '<span class="barra-valor"></span>'+
                   '<span class="barra-cuerpo"><span class="cuota"></span></span>'+
                 '</span>'+
-                '<span class="barra-mes">'+(i===0?'Hoy':'Mes '+(i+1))+'</span>';
+                '<span class="barra-mes">'+etiquetaMes(i)+'</span>';
     b.addEventListener('click',()=>{mesElegido=i;calcular();});
     cont.appendChild(b);
   }
@@ -1429,7 +1443,7 @@ function calcular(){
     b.querySelector('.cuota').style.height='0%';
     b.querySelector('.barra-valor').textContent=eur(importe);
     b.classList.toggle('activa', i===mesElegido);
-    b.setAttribute('aria-label',(i===0?'Hoy':'Mes '+(i+1))+': '+eur(importe));
+    b.setAttribute('aria-label',etiquetaMes(i)+(i===0?' (mes actual)':'')+': '+eur(importe));
   });
 
   document.getElementById('ahorro-anual').textContent=d.ahorroAnual.toLocaleString('es-ES')+' €';
@@ -1462,6 +1476,21 @@ calcular();
   // por si el observador no llegara a dispararse
   setTimeout(()=>{if(!graficaVista){graficaVista=true;calcular();}},1500);
 })();
+
+/* al cambiar de tamaño, ajustar el número de meses */
+let temporizadorMeses=null;
+window.addEventListener('resize',()=>{
+  clearTimeout(temporizadorMeses);
+  temporizadorMeses=setTimeout(()=>{
+    const n=mesesVisibles();
+    if(n!==MESES){
+      MESES=n;
+      barrasCreadas=false;
+      if(mesElegido>MESES-1)mesElegido=MESES-1;
+      calcular();
+    }
+  },200);
+});
 
 /* ---------- KPIs con cuenta ascendente ---------- */
 function animateKPI(elementId, targetNumber, duration = 2000, delay = 0){
