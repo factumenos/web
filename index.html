@@ -1330,7 +1330,7 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
       <a href="tel:+34660309778">+34 660 309 778</a>
       <a href="mailto:contacto@factumenos.es">contacto@factumenos.es</a>
     </div>
-    <p class="footer-legal">© 2025 FactuMenos · Servicio de optimización de contratos de telecomunicaciones · Madrid, España</p>
+    <p class="footer-legal">© <span id="anyo">2026</span> FactuMenos · Servicio de optimización de contratos de telecomunicaciones · Madrid, España</p>
   </div>
 </footer>
 
@@ -1348,6 +1348,12 @@ function toggleMenu(){
   menu.classList.toggle('abierto');
   btn.classList.toggle('abierto');
 }
+
+/* ---------- año del pie, siempre actual ---------- */
+(function(){
+  const a=document.getElementById('anyo');
+  if(a)a.textContent=new Date().getFullYear();
+})();
 
 /* ---------- altura real de la primera pantalla ---------- */
 function medirPantalla(){
