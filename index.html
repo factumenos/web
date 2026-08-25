@@ -446,90 +446,99 @@ section{padding:4.6rem 0}
 }
 .crono-cta{margin-top:3rem;display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem}
 
-/* ---------- calculadora: un solo panel ---------- */
+/* ---------- calculadora con gráfica ---------- */
 #calculadora{background:var(--papel-2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
-@media(max-width:939px){#calculadora{padding:3.2rem 0 3.4rem}}
-.calc-cab{margin-bottom:1.6rem}
-.calc-cab h2{margin-bottom:0}
-.calc-panel{
-  background:var(--papel);border:1px solid var(--linea);border-radius:14px;
-  box-shadow:var(--sombra-papel);overflow:hidden;
-}
+@media(max-width:939px){#calculadora{padding:2.8rem 0}}
+.calc-cab{margin-bottom:1.3rem;text-align:center}
+.calc-cab .eyebrow{justify-content:center}
+.calc-cab h2{margin-bottom:0;font-size:clamp(1.6rem,4.2vw,2.4rem)}
+
+.calc-panel{background:var(--papel);border:1px solid var(--linea);border-radius:14px;overflow:hidden}
 @media(min-width:940px){
-  .calc-panel{display:grid;grid-template-columns:1fr 1fr}
+  .calc-panel{display:grid;grid-template-columns:0.8fr 1.2fr}
   .calc-control{border-right:1px solid var(--linea)}
 }
-.calc-control{padding:1.4rem 1.4rem 1.3rem;display:flex;flex-direction:column;gap:1.3rem;justify-content:center}
-@media(min-width:940px){.calc-control{padding:2.2rem;gap:1.8rem}}
-.calc-grupo{display:flex;flex-direction:column;gap:0.5rem}
-.calc-label{font-family:var(--f-mono);font-size:0.77rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:var(--tinta-suave)}
-.calc-select{
-  font-family:var(--f-display);font-size:1.0rem;color:var(--tinta);
-  background:var(--papel-2);border:1.5px solid var(--linea-fuerte);border-radius:10px;
-  padding:0.72rem 0.9rem;width:100%;cursor:pointer;
-  -webkit-appearance:none;appearance:none;transition:border-color .15s,box-shadow .15s;
-  background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234C5A51' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 0.9rem center;
-}
-.calc-select:focus{outline:none;border-color:var(--verde);box-shadow:0 0 0 3px rgba(0,140,90,0.15)}
-.calc-top{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.calc-actual{
-  font-family:var(--f-mono);font-weight:600;font-size:clamp(2.1rem,8vw,3rem);
-  letter-spacing:-0.04em;line-height:1;font-variant-numeric:tabular-nums;
-}
-.calc-actual small{font-size:0.3em;font-weight:500;color:var(--tinta-suave);letter-spacing:0}
+.calc-control{padding:1.2rem 1.3rem 1.3rem;display:flex;flex-direction:column;justify-content:center;gap:0.9rem}
+@media(min-width:940px){.calc-control{padding:1.9rem}}
+.calc-label{font-family:var(--f-mono);font-size:0.74rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--tinta-suave)}
+.calc-top{display:flex;align-items:baseline;justify-content:space-between;gap:0.8rem}
+.calc-actual{font-family:var(--f-mono);font-weight:500;font-size:clamp(1.7rem,5.6vw,2.2rem);letter-spacing:-0.035em;line-height:1;font-variant-numeric:tabular-nums}
+.calc-actual small{font-size:0.42em;color:var(--tinta-suave);letter-spacing:0;margin-left:0.15em}
 input[type=range]{
-  -webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:99px;
-  background:linear-gradient(to right,var(--verde) 43%,var(--borde) 43%);
-  outline:none;cursor:pointer;margin:0.9rem 0 0.45rem;touch-action:pan-y;
+  -webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:99px;
+  background:linear-gradient(to right,var(--verde) 43%,var(--linea-fuerte) 43%);
+  outline:none;cursor:pointer;margin:0.35rem 0;touch-action:pan-y;
 }
 input[type=range]::-webkit-slider-thumb{
-  -webkit-appearance:none;width:28px;height:28px;border-radius:50%;
-  background:var(--tinta);border:5px solid var(--papel);
-  box-shadow:0 0 0 1.5px var(--tinta),0 3px 8px rgba(20,28,23,0.3);cursor:grab;
+  -webkit-appearance:none;width:20px;height:20px;border-radius:50%;
+  background:var(--papel);border:1.5px solid var(--tinta);
+  box-shadow:0 1px 4px rgba(20,28,23,0.25);cursor:grab;
 }
 input[type=range]::-moz-range-thumb{
-  width:18px;height:18px;border-radius:50%;background:var(--tinta);
-  border:5px solid var(--papel);box-shadow:0 0 0 1.5px var(--tinta);cursor:grab;
+  width:16px;height:16px;border-radius:50%;background:var(--papel);
+  border:1.5px solid var(--tinta);cursor:grab;
 }
-.calc-rango{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:0.77rem;color:var(--tinta-suave)}
+.calc-fila-op{display:flex;align-items:center;justify-content:space-between;gap:0.8rem;padding-top:0.55rem;border-top:1px solid var(--linea)}
+.calc-select{
+  font-family:var(--f-display);font-size:0.92rem;color:var(--tinta);
+  background:transparent;border:1px solid var(--linea-fuerte);border-radius:99px;
+  padding:0.38rem 1.9rem 0.38rem 0.8rem;cursor:pointer;-webkit-appearance:none;appearance:none;
+  background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%234C5A51' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 0.75rem center;
+}
+.calc-select:focus{outline:none;border-color:var(--verde)}
 
-.calc-resultado{padding:1.3rem 1.4rem 1.5rem;border-top:1px solid var(--linea);background:var(--papel-2)}
-@media(min-width:940px){.calc-resultado{padding:2.2rem;border-top:none}}
-.calc-fila{
-  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
-  padding:0.55rem 0;border-bottom:1px dashed var(--linea);font-size:0.96rem;
+/* --- barras por mes --- */
+.calc-grafica{padding:1.4rem 1.1rem 1.2rem;background:var(--papel-2);border-top:1px solid var(--linea)}
+@media(min-width:940px){.calc-grafica{padding:1.9rem;border-top:none}}
+.barras{display:flex;align-items:flex-end;gap:0.4rem}
+@media(min-width:940px){.barras{gap:0.9rem}}
+.barra{
+  flex:1;display:flex;flex-direction:column;align-items:center;gap:0.45rem;
+  background:none;border:none;padding:0;cursor:pointer;font-family:inherit;
 }
-.calc-fila .c{color:var(--tinta-media)}
-.calc-fila .v{font-family:var(--f-mono);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+/* zona con altura propia: las alturas en % se miden aquí y no se deforman */
+.barra-zona{position:relative;width:100%;height:130px}
+@media(min-width:940px){.barra-zona{height:170px}}
+.barra-valor{
+  position:absolute;left:50%;transform:translateX(-50%);
+  font-family:var(--f-mono);font-size:0.81rem;font-weight:600;white-space:nowrap;
+  color:var(--tinta);opacity:0;transition:opacity .2s,bottom .65s cubic-bezier(.25,.9,.3,1);
+  font-variant-numeric:tabular-nums;
+}
+.barra.activa .barra-valor{opacity:1}
+.barra.activa:not(.original) .barra-valor{color:var(--verde)}
+.barra-cuerpo{
+  position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:100%;max-width:16px;border-radius:99px;overflow:hidden;background:var(--verde);
+  display:flex;flex-direction:column;justify-content:flex-start;
+  transition:height .65s cubic-bezier(.25,.9,.3,1),opacity .2s;
+}
+@media(min-width:940px){.barra-cuerpo{max-width:20px}}
+.barra.original .barra-cuerpo{background:var(--tinta-suave)}
+.barra .cuota{width:100%;background:rgba(255,255,255,0.62);transition:height .5s ease}
+.barra:not(.activa) .barra-cuerpo{opacity:0.55}
+.barra.activa .barra-cuerpo{opacity:1}
+.barra-mes{font-family:var(--f-mono);font-size:0.74rem;color:var(--tinta-suave);white-space:nowrap;flex:0 0 auto}
+.barra.activa .barra-mes{color:var(--tinta)}
 
-/* comparativa anual destacada */
-.calc-anual{
-  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:0.5rem;
-  margin-top:1.1rem;padding:1rem 0.9rem;border-radius:10px;
-  background:var(--superficie);border:1px solid var(--linea);
+/* --- resultado --- */
+.calc-total{
+  margin-top:1.4rem;display:flex;flex-direction:column;align-items:center;gap:0.5rem;text-align:center;
 }
-.ca-item{display:flex;flex-direction:column;gap:0.3rem;min-width:0}
-.ca-item:last-child{text-align:right;align-items:flex-end}
-.ca-etq{font-family:var(--f-mono);font-size:0.74rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--tinta-suave);line-height:1.3}
-.ca-val{
-  font-family:var(--f-mono);font-weight:600;font-size:clamp(1.05rem,3.6vw,1.3rem);
-  letter-spacing:-0.02em;font-variant-numeric:tabular-nums;white-space:nowrap;
+.calc-total-etq{
+  font-family:var(--f-mono);font-size:0.81rem;font-weight:500;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--tinta-suave);
 }
-.ca-val.tach{color:var(--tinta-suave);text-decoration:line-through;text-decoration-color:var(--rojo);text-decoration-thickness:2px}
-.ca-val.nuevo{color:var(--verde)}
-.ca-fl{font-family:var(--f-mono);color:var(--verde);font-size:1.1rem;padding:0 0.2rem}
-
-.calc-quedas{
-  display:flex;justify-content:space-between;align-items:center;gap:1rem;
-  margin-top:1rem;padding-top:1rem;border-top:2px solid var(--tinta);
+.calc-total-num{
+  font-family:var(--f-mono);font-weight:600;color:var(--verde);
+  font-size:clamp(3.2rem,13vw,4.6rem);letter-spacing:-0.05em;line-height:1;
+  font-variant-numeric:tabular-nums;
 }
-.calc-quedas .c{font-weight:600;font-size:0.96rem;line-height:1.25;max-width:11ch}
-.calc-quedas .v{font-family:var(--f-mano);font-weight:700;color:var(--verde);font-size:clamp(2.3rem,9vw,2.9rem);line-height:1;transform:rotate(-2deg)}
-.calc-pie{font-family:var(--f-mono);font-size:0.77rem;color:var(--tinta-suave);margin-top:1rem;line-height:1.6}
+.calc-total .btn{margin-top:0.7rem;width:100%;max-width:420px}
+@media(min-width:940px){.calc-total .btn{width:auto;padding-left:2.4rem;padding-right:2.4rem}}
+.calc-pie{font-family:var(--f-mono);font-size:0.74rem;color:var(--tinta-suave);margin-top:1.1rem;line-height:1.6;text-align:center}
 .calc-pie #op-nombre{color:var(--verde);font-weight:600}
-.calc-cta{margin-top:1.1rem}
-.calc-cta .btn{width:100%}
 
 /* ---------- cláusulas / garantías ---------- */
 .doc{
@@ -573,21 +582,21 @@ input[type=range]::-moz-range-thumb{
 .testimonios{display:grid;gap:1.3rem}
 @media(max-width:819px){
   .testimonios{
-    display:flex;gap:0.9rem;
+    display:flex;gap:0.9rem;position:relative;
     overflow-x:auto;overflow-y:hidden;
     scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-    margin:0 -1.4rem;padding:0.2rem 1.4rem 0.6rem;
+    margin:0 -1.4rem;padding:0.2rem 8vw 0.6rem;scroll-padding:0 8vw;
     scrollbar-width:none;-ms-overflow-style:none;
   }
   .testimonios::-webkit-scrollbar{display:none}
   .testimonio{
-    flex:0 0 86%;scroll-snap-align:center;
+    flex:0 0 84vw;scroll-snap-align:center;
     opacity:1 !important;transform:none !important;
   }
   .testimonio:hover{transform:none}
-  .carrusel-nav{display:flex}
 }
-.carrusel-nav{display:none;align-items:center;justify-content:center;gap:1rem;margin-top:1.2rem}
+.carrusel-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.2rem}
+@media(min-width:820px){.carrusel-nav{display:none}}
 .carrusel-flecha{
   width:38px;height:38px;border-radius:50%;flex-shrink:0;
   border:1.5px solid var(--linea-fuerte);background:var(--papel-2);
@@ -611,11 +620,6 @@ input[type=range]::-moz-range-thumb{
   transition:transform .2s ease,box-shadow .2s ease;
 }
 .testimonio:hover{transform:translateY(-3px);box-shadow:var(--sombra-papel)}
-.testimonio-cifra{font-family:var(--f-mono);font-weight:600;font-size:1.35rem;letter-spacing:-0.01em;display:flex;align-items:baseline;gap:0.6rem;flex-wrap:wrap}
-.testimonio-cifra .antes{position:relative;color:var(--tinta-suave)}
-.testimonio-cifra .antes::after{content:"";position:absolute;left:-4%;right:-4%;top:52%;height:2.5px;background:var(--rojo);transform:rotate(-3deg);border-radius:2px}
-.testimonio-cifra .despues{color:var(--verde)}
-.testimonio-cifra .flecha{color:var(--tinta-suave);font-size:1rem}
 .testimonio p{font-size:1.0rem;color:var(--tinta-media);flex:1}
 .testimonio-pie{display:flex;align-items:center;gap:0.8rem;font-size:0.92rem}
 .testimonio-pie .avatar{
@@ -1003,15 +1007,21 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
 <section id="calculadora">
   <div class="contenedor">
     <div class="calc-cab reveal">
-      <p class="eyebrow">Calculadora de ahorro</p>
-      <h2>Calcula tu ahorro anual.</h2>
+      <p class="eyebrow">Calculadora</p>
+      <h2>Así baja tu factura.</h2>
     </div>
+
     <div class="calc-panel reveal">
       <div class="calc-control">
-        <div class="calc-grupo">
-          <label class="calc-label" for="operadora">Tu operadora actual</label>
+        <div class="calc-top">
+          <span class="calc-label">Pago ahora</span>
+          <span class="calc-actual"><span id="lbl-factura">200 €</span><small>/mes</small></span>
+        </div>
+        <input type="range" id="factura" min="50" max="400" step="5" value="200" oninput="calcular()" onchange="calcular()" aria-label="Tu factura mensual actual en euros">
+        <div class="calc-fila-op">
+          <label class="calc-label" for="operadora">Mi operadora</label>
           <select id="operadora" class="calc-select" onchange="calcular()">
-            <option value="">Selecciona tu operadora</option>
+            <option value="">Elegir</option>
             <option>Movistar</option>
             <option>Vodafone</option>
             <option>Orange</option>
@@ -1021,37 +1031,19 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
             <option value="otra">Otra</option>
           </select>
         </div>
-        <div class="calc-grupo">
-          <div class="calc-top">
-            <span class="calc-label">Factura mensual actual</span>
-            <span class="calc-actual"><span id="lbl-factura">200 €</span><small>/mes</small></span>
-          </div>
-          <input type="range" id="factura" min="50" max="400" step="5" value="200" oninput="calcular()" onchange="calcular()" aria-label="Tu factura mensual actual en euros">
-          <div class="calc-rango"><span>50 €</span><span>400 €</span></div>
-        </div>
       </div>
-      <div class="calc-resultado">
-        <div class="calc-fila"><span class="c">Nueva factura estimada</span><span class="v" id="nueva-factura">100 €/mes</span></div>
-        <div class="calc-fila"><span class="c">Cuota FactuMenos</span><span class="v" id="comision">19,99 €/mes</span></div>
-        <div class="calc-anual">
-          <div class="ca-item">
-            <span class="ca-etq">Pago anual actual</span>
-            <span class="ca-val tach" id="pago-actual">2.400 €/año</span>
-          </div>
-          <span class="ca-fl" aria-hidden="true">→</span>
-          <div class="ca-item">
-            <span class="ca-etq">Pago anual estimado</span>
-            <span class="ca-val nuevo" id="pago-nuevo">1.200 €/año</span>
-          </div>
-        </div>
-        <div class="calc-quedas">
-          <span class="c">Tu ahorro anual estimado</span>
-          <span class="v" id="ahorro-anual">960 €</span>
-        </div>
-        <p class="calc-pie">Continúas con <span id="op-nombre">tu operadora actual</span> y mantienes todos tus servicios. Nuestra cuota se calcula sobre el ahorro conseguido: si no hay ahorro, no hay cuota.</p>
-        <div class="calc-cta"><button type="button" class="btn btn-verde abre-form">Solicitar análisis gratuito</button></div>
+
+      <div class="calc-grafica">
+        <div class="barras" id="barras" role="group" aria-label="Tu factura mes a mes"></div>
       </div>
     </div>
+
+    <div class="calc-total reveal">
+      <p class="calc-total-etq">En un año te ahorras</p>
+      <p class="calc-total-num" id="ahorro-anual">960 €</p>
+      <button type="button" class="btn btn-verde abre-form">Quiero mi análisis gratis</button>
+    </div>
+    <p class="calc-pie reveal">Las barras muestran tu factura. Nuestra cuota sale del ahorro y ya está descontada del total anual. Sigues con <span id="op-nombre">tu operadora</span> y los mismos servicios.</p>
   </div>
 </section>
 
@@ -1133,7 +1125,6 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
     </div>
     <div class="testimonios">
       <article class="testimonio reveal">
-        <p class="testimonio-cifra"><span class="antes">340&nbsp;€</span><span class="flecha">→</span><span class="despues">170&nbsp;€/mes</span></p>
         <p>«Pagaba 340&nbsp;€ al mes y pensaba que era lo normal. En tres semanas pasé a pagar 170&nbsp;€. Increíble que la compañía no te lo ofrezca directamente.»</p>
         <div class="testimonio-pie">
           <span class="avatar">MR</span>
@@ -1142,7 +1133,6 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
         </div>
       </article>
       <article class="testimonio reveal">
-        <p class="testimonio-cifra"><span class="despues">−200&nbsp;€/mes</span></p>
         <p>«Lo que más me convenció fue que si no funcionaba no pagaba nada. Funcionó. Ahorro más de 200&nbsp;€ al mes y no tuve que hacer nada yo.»</p>
         <div class="testimonio-pie">
           <span class="avatar">LP</span>
@@ -1151,7 +1141,6 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
         </div>
       </article>
       <article class="testimonio reveal">
-        <p class="testimonio-cifra"><span class="despues">Nueva factura en 15 días</span></p>
         <p>«Pensé que era demasiado bueno para ser verdad. Me enviaron el análisis en 24 horas y a los 15 días ya tenía la nueva factura.»</p>
         <div class="testimonio-pie">
           <span class="avatar">JA</span>
@@ -1160,7 +1149,6 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
         </div>
       </article>
       <article class="testimonio reveal">
-        <p class="testimonio-cifra"><span class="despues">−130&nbsp;€/mes</span> <span class="flecha">·</span> <span class="despues">≈&nbsp;800&nbsp;€ en 6 meses</span></p>
         <p>«Llevo 6 meses ahorrando 130&nbsp;€ al mes. Ya me he ahorrado casi 800&nbsp;€ y me quedan otros 6 meses. Ojalá lo hubiera hecho antes.»</p>
         <div class="testimonio-pie">
           <span class="avatar">CS</span>
@@ -1378,37 +1366,102 @@ function contarTitular(){
   },retardo);
 }
 
-/* ---------- calculadora (fórmula original intacta) ---------- */
-function calcular(){
-  const slider=document.getElementById('factura');
-  const f=parseInt(slider.value);
-  const min=parseInt(slider.min);
-  const max=parseInt(slider.max);
-  const pct=((f-min)/(max-min))*100;
-  slider.style.background=`linear-gradient(to right, var(--verde) ${pct}%, var(--linea) ${pct}%)`;
+/* ---------- calculadora con gráfica (fórmula original intacta) ---------- */
+function eur(n){
+  return n.toLocaleString('es-ES',{minimumFractionDigits:(n%1?2:0),maximumFractionDigits:2})+' €';
+}
 
-  document.getElementById('lbl-factura').textContent=f+' €';
+function datos(){
+  const f=parseInt(document.getElementById('factura').value);
   const ahorro=Math.round(f*0.5);
   const nueva=f-ahorro;
-  const comisionRaw=ahorro*0.20;
-  const comisionFloor=Math.floor(comisionRaw)-0.01;
-  const comisionDisplay=comisionFloor.toFixed(2).replace('.',',');
-  const ahorroNeto=Math.floor((ahorro-comisionFloor)*12);
-  document.getElementById('nueva-factura').textContent=nueva+' €/mes';
-  document.getElementById('comision').textContent=comisionDisplay+' €/mes';
-  document.getElementById('ahorro-anual').textContent=ahorroNeto.toLocaleString('es-ES')+' €';
-  document.getElementById('pago-actual').textContent=(f*12).toLocaleString('es-ES')+' €/año';
-  document.getElementById('pago-nuevo').textContent=(nueva*12).toLocaleString('es-ES')+' €/año';
+  const cuota=Math.floor(ahorro*0.20)-0.01;
+  const pagoNuevo=nueva+cuota;                 // lo que te cuesta al mes en total
+  const ahorroMes=f-pagoNuevo;
+  const ahorroAnual=Math.floor((ahorro-cuota)*12);
+  return {f,ahorro,nueva,cuota,pagoNuevo,ahorroMes,ahorroAnual};
+}
 
-  /* la operadora solo personaliza el texto: no interviene en el cálculo */
-  const sel=document.getElementById('operadora');
-  const op=document.getElementById('op-nombre');
+const MESES=6;
+let mesElegido=1;              // arranca en el primer mes con descuento
+let barrasCreadas=false;
+let graficaVista=false;        // las barras caen al entrar en pantalla
+
+function crearBarras(){
+  const cont=document.getElementById('barras');
+  if(!cont)return;
+  cont.innerHTML='';
+  for(let i=0;i<MESES;i++){
+    const b=document.createElement('button');
+    b.type='button';
+    b.className='barra'+(i===0?' original':'')+(i===mesElegido?' activa':'');
+    b.innerHTML='<span class="barra-zona">'+
+                  '<span class="barra-valor"></span>'+
+                  '<span class="barra-cuerpo"><span class="cuota"></span></span>'+
+                '</span>'+
+                '<span class="barra-mes">'+(i===0?'Hoy':'Mes '+(i+1))+'</span>';
+    b.addEventListener('click',()=>{mesElegido=i;calcular();});
+    cont.appendChild(b);
+  }
+  barrasCreadas=true;
+}
+
+function calcular(){
+  const slider=document.getElementById('factura');
+  if(!slider)return;
+  const d=datos();
+  const min=parseInt(slider.min), max=parseInt(slider.max);
+  const pct=((d.f-min)/(max-min))*100;
+  slider.style.background=`linear-gradient(to right, var(--verde) ${pct}%, var(--linea-fuerte) ${pct}%)`;
+  document.getElementById('lbl-factura').textContent=d.f+' €';
+
+  if(!barrasCreadas)crearBarras();
+
+  document.querySelectorAll('.barra').forEach((b,i)=>{
+    const importe = i===0 ? d.f : d.nueva;   // la barra muestra tu factura
+    const cuerpo=b.querySelector('.barra-cuerpo');
+    // hasta que la sección entra en pantalla, todas parten del importe de hoy
+    const zona=b.querySelector('.barra-zona');
+    const maxAlto=Math.max(60,(zona.clientHeight||130)-28); // deja aire arriba para el importe
+    const alto = graficaVista ? Math.round(maxAlto*(importe/d.f)) : maxAlto;
+    cuerpo.style.height=alto+'px';
+    b.querySelector('.barra-valor').style.bottom=(alto+7)+'px';
+    b.querySelector('.cuota').style.height='0%';
+    b.querySelector('.barra-valor').textContent=eur(importe);
+    b.classList.toggle('activa', i===mesElegido);
+    b.setAttribute('aria-label',(i===0?'Hoy':'Mes '+(i+1))+': '+eur(importe));
+  });
+
+  document.getElementById('ahorro-anual').textContent=d.ahorroAnual.toLocaleString('es-ES')+' €';
+
+  const sel=document.getElementById('operadora'), op=document.getElementById('op-nombre');
   if(sel&&op){
     const v=sel.value;
-    op.textContent=(v===''||v==='otra')?'tu operadora actual':v;
+    op.textContent=(v===''||v==='otra')?'tu operadora':v;
   }
 }
 calcular();
+
+/* las barras caen cuando la gráfica entra en pantalla */
+(function(){
+  const g=document.getElementById('barras');
+  if(!g)return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    graficaVista=true;calcular();return;
+  }
+  const obs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting&&!graficaVista){
+        graficaVista=true;
+        setTimeout(calcular,250);
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.4});
+  obs.observe(g);
+  // por si el observador no llegara a dispararse
+  setTimeout(()=>{if(!graficaVista){graficaVista=true;calcular();}},1500);
+})();
 
 /* ---------- KPIs con cuenta ascendente ---------- */
 function animateKPI(elementId, targetNumber, duration = 2000, delay = 0){
@@ -1527,26 +1580,28 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
   function intervenirUsuario(){
     parar();
     clearTimeout(pausaTemporal);
-    pausaTemporal=setTimeout(arrancar,9000);
+    pausaTemporal=setTimeout(revisar,9000);
   }
   pista.addEventListener('touchstart',intervenirUsuario,{passive:true});
   pista.addEventListener('mousedown',intervenirUsuario);
 
-  // solo avanza si la sección está en pantalla (y el carrusel está activo)
+  // solo avanza si la sección está en pantalla y el carrusel está activo
+  let enVista=false;
+  function esCarrusel(){return getComputedStyle(nav).display!=='none';}
+  function revisar(){
+    if(enVista&&esCarrusel()&&!document.hidden)arrancar();
+    else parar();
+  }
   const vigilante=new IntersectionObserver(entradas=>{
-    entradas.forEach(e=>{
-      const activo=getComputedStyle(nav).display!=='none';
-      if(e.isIntersecting&&activo)arrancar();else parar();
-    });
+    entradas.forEach(e=>{enVista=e.isIntersecting;});
+    revisar();
   },{threshold:0.35});
   vigilante.observe(pista);
 
-  // si cambia el tamaño y deja de ser carrusel, se detiene
-  window.addEventListener('resize',()=>{
-    if(getComputedStyle(nav).display==='none')parar();
-  });
+  window.addEventListener('resize',revisar);
+  // al volver a la pestaña o de otra app, se reanuda
   document.addEventListener('visibilitychange',()=>{
-    if(document.hidden)parar();
+    if(document.hidden)parar(); else revisar();
   });
 })();
 
