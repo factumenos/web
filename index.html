@@ -296,6 +296,7 @@ body.cargado .hero h1 .subrayado::after{animation:trazarSubrayado .55s cubic-bez
   .hero-bloque{
     min-height:calc(100vh - 68px);
     min-height:calc(100svh - 68px);
+    min-height:var(--alto-hero, calc(100svh - 68px));
     display:flex;flex-direction:column;justify-content:center;align-items:center;
     padding:1.2rem 0;
   }
@@ -1332,6 +1333,15 @@ function toggleMenu(){
   menu.classList.toggle('abierto');
   btn.classList.toggle('abierto');
 }
+
+/* ---------- altura real de la primera pantalla ---------- */
+function medirPantalla(){
+  const alto=(window.visualViewport&&window.visualViewport.height)||window.innerHeight;
+  document.documentElement.style.setProperty('--alto-hero',(alto-68)+'px');
+}
+medirPantalla();
+window.addEventListener('orientationchange',()=>setTimeout(medirPantalla,250));
+window.addEventListener('pageshow',medirPantalla);
 
 /* ---------- scroll suave + cierre menú ---------- */
 document.addEventListener('DOMContentLoaded',function(){
