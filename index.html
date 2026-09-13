@@ -4,10 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name="theme-color" content="#F6F4EE">
-<link rel="icon" href="/favicon.ico?v=2" sizes="any">
-<link rel="icon" type="image/png" href="/favicon.png?v=2" sizes="512x512">
-<link rel="apple-touch-icon" href="/favicon.png?v=2">
-<link rel="icon" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%2300c47d'/%3E%3Ctext x='50' y='50' font-family='Helvetica,Arial,sans-serif' font-weight='700' font-size='62' fill='%230a1f16' text-anchor='middle' dominant-baseline='central'%3E%25%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="icon" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2300c47d'/%3E%3Ctext x='50' y='72' font-family='Arial,sans-serif' font-weight='900' font-size='56' fill='%230c110e' text-anchor='middle'%3EFM%3C/text%3E%3C/svg%3E" type="image/svg+xml">
 <title>FactuMenos — Reduce tu factura de móvil, fibra y TV a la mitad</title>
 <meta name="description" content="FactuMenos: baja tu factura de móvil, fibra y TV hasta 50%. Análisis gratis en 24h sin cambiar de compañía. Solo pagas si ahorras.">
 <meta name="keywords" content="bajar factura móvil, reducir factura, cambiar de compañía, negociar descuento, factura más barata, ahorro factura móvil, renegociar contrato, factura fibra, factura TV, análisis factura gratis">
@@ -196,11 +193,10 @@ header{
   border-bottom:1px solid var(--linea);
 }
 .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{font-weight:700;font-size:1.52rem;letter-spacing:-0.025em;text-decoration:none;position:relative;line-height:1}
-@media(min-width:900px){.logo{font-size:1.64rem}}
+.logo{font-weight:700;font-size:1.28rem;letter-spacing:-0.02em;text-decoration:none;position:relative;line-height:1}
 .logo .menos{color:var(--verde);position:relative}
 .logo .menos::after{
-  content:"";position:absolute;left:0;right:-2px;bottom:-6px;height:6px;
+  content:"";position:absolute;left:0;right:-2px;bottom:-5px;height:5px;
   background:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8' preserveAspectRatio='none'%3E%3Cpath d='M2 5 C 20 2, 45 7, 70 4 S 95 3, 98 5' stroke='%2300C47D' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%;
 }
 .nav-links{display:none;gap:2rem;align-items:center}
@@ -296,7 +292,6 @@ body.cargado .hero h1 .subrayado::after{animation:trazarSubrayado .55s cubic-bez
   .hero-bloque{
     min-height:calc(100vh - 68px);
     min-height:calc(100svh - 68px);
-    min-height:var(--alto-hero, calc(100svh - 68px));
     display:flex;flex-direction:column;justify-content:center;align-items:center;
     padding:1.2rem 0;
   }
@@ -447,112 +442,90 @@ section{padding:4.6rem 0}
 }
 .crono-cta{margin-top:3rem;display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem}
 
-/* ---------- calculadora con gráfica ---------- */
+/* ---------- calculadora: un solo panel ---------- */
 #calculadora{background:var(--papel-2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
-@media(max-width:939px){#calculadora{padding:2.8rem 0}}
-.calc-cab{margin-bottom:1.3rem;text-align:center}
-.calc-cab .eyebrow{justify-content:center}
-.calc-cab h2{margin-bottom:0;font-size:clamp(1.6rem,4.2vw,2.4rem)}
-
-.calc-panel{background:var(--papel);border:1px solid var(--linea);border-radius:14px;overflow:hidden}
+@media(max-width:939px){#calculadora{padding:3.2rem 0 3.4rem}}
+.calc-cab{margin-bottom:1.6rem}
+.calc-cab h2{margin-bottom:0}
+.calc-panel{
+  background:var(--papel);border:1px solid var(--linea);border-radius:14px;
+  box-shadow:var(--sombra-papel);overflow:hidden;
+}
 @media(min-width:940px){
-  .calc-panel{display:grid;grid-template-columns:0.8fr 1.2fr}
+  .calc-panel{display:grid;grid-template-columns:1fr 1fr}
   .calc-control{border-right:1px solid var(--linea)}
 }
-.calc-control{padding:1.2rem 1.3rem 1.3rem;display:flex;flex-direction:column;justify-content:center;gap:0.9rem}
-@media(min-width:940px){.calc-control{padding:1.9rem}}
-.calc-label{font-family:var(--f-mono);font-size:0.74rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--tinta-suave)}
-.calc-top{display:flex;align-items:baseline;justify-content:space-between;gap:0.8rem}
-.calc-actual{font-family:var(--f-mono);font-weight:500;font-size:clamp(1.7rem,5.6vw,2.2rem);letter-spacing:-0.035em;line-height:1;font-variant-numeric:tabular-nums}
-.calc-actual small{font-size:0.42em;color:var(--tinta-suave);letter-spacing:0;margin-left:0.15em}
+.calc-control{padding:1.4rem 1.4rem 1.3rem;display:flex;flex-direction:column;gap:1.3rem;justify-content:center}
+@media(min-width:940px){.calc-control{padding:2.2rem;gap:1.8rem}}
+.calc-grupo{display:flex;flex-direction:column;gap:0.5rem}
+.calc-label{font-family:var(--f-mono);font-size:0.77rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:var(--tinta-suave)}
+.calc-select{
+  font-family:var(--f-display);font-size:1.0rem;color:var(--tinta);
+  background:var(--papel-2);border:1.5px solid var(--linea-fuerte);border-radius:10px;
+  padding:0.72rem 0.9rem;width:100%;cursor:pointer;
+  -webkit-appearance:none;appearance:none;transition:border-color .15s,box-shadow .15s;
+  background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234C5A51' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 0.9rem center;
+}
+.calc-select:focus{outline:none;border-color:var(--verde);box-shadow:0 0 0 3px rgba(0,140,90,0.15)}
+.calc-top{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.calc-actual{
+  font-family:var(--f-mono);font-weight:600;font-size:clamp(2.1rem,8vw,3rem);
+  letter-spacing:-0.04em;line-height:1;font-variant-numeric:tabular-nums;
+}
+.calc-actual small{font-size:0.3em;font-weight:500;color:var(--tinta-suave);letter-spacing:0}
 input[type=range]{
-  -webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:99px;
-  background:linear-gradient(to right,var(--verde) 43%,var(--linea-fuerte) 43%);
-  outline:none;cursor:pointer;margin:0.35rem 0;touch-action:pan-y;
+  -webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:99px;
+  background:linear-gradient(to right,var(--verde) 43%,var(--borde) 43%);
+  outline:none;cursor:pointer;margin:0.9rem 0 0.45rem;touch-action:pan-y;
 }
 input[type=range]::-webkit-slider-thumb{
-  -webkit-appearance:none;width:20px;height:20px;border-radius:50%;
-  background:var(--papel);border:1.5px solid var(--tinta);
-  box-shadow:0 1px 4px rgba(20,28,23,0.25);cursor:grab;
+  -webkit-appearance:none;width:28px;height:28px;border-radius:50%;
+  background:var(--tinta);border:5px solid var(--papel);
+  box-shadow:0 0 0 1.5px var(--tinta),0 3px 8px rgba(20,28,23,0.3);cursor:grab;
 }
 input[type=range]::-moz-range-thumb{
-  width:16px;height:16px;border-radius:50%;background:var(--papel);
-  border:1.5px solid var(--tinta);cursor:grab;
+  width:18px;height:18px;border-radius:50%;background:var(--tinta);
+  border:5px solid var(--papel);box-shadow:0 0 0 1.5px var(--tinta);cursor:grab;
 }
-.calc-pista{display:none}
-@media(min-width:940px){
-  .calc-pista{
-    display:block;
-    font-family:var(--f-mono);font-size:0.74rem;font-weight:600;
-    letter-spacing:0.12em;text-transform:uppercase;color:var(--tinta);
-    margin-bottom:0.2rem;
-  }
-}
-.calc-fila-op{display:flex;align-items:center;justify-content:space-between;gap:0.8rem;padding-top:0.55rem;border-top:1px solid var(--linea)}
-.calc-select{
-  font-family:var(--f-display);font-size:0.92rem;color:var(--tinta);
-  background:transparent;border:1px solid var(--linea-fuerte);border-radius:99px;
-  padding:0.38rem 1.9rem 0.38rem 0.8rem;cursor:pointer;-webkit-appearance:none;appearance:none;
-  background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%234C5A51' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 0.75rem center;
-}
-.calc-select:focus{outline:none;border-color:var(--verde)}
+.calc-rango{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:0.77rem;color:var(--tinta-suave)}
 
-/* --- barras por mes --- */
-.calc-grafica{padding:1.4rem 1.1rem 1.2rem;background:var(--papel-2);border-top:1px solid var(--linea)}
-@media(min-width:940px){.calc-grafica{padding:1.9rem;border-top:none}}
-.grafica-titulo{
-  font-family:var(--f-mono);font-size:0.74rem;font-weight:600;letter-spacing:0.12em;
-  text-transform:uppercase;color:var(--tinta);margin-bottom:1.1rem;
+.calc-resultado{padding:1.3rem 1.4rem 1.5rem;border-top:1px solid var(--linea);background:var(--papel-2)}
+@media(min-width:940px){.calc-resultado{padding:2.2rem;border-top:none}}
+.calc-fila{
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  padding:0.55rem 0;border-bottom:1px dashed var(--linea);font-size:0.96rem;
 }
-.barras{display:flex;align-items:flex-end;gap:0.4rem}
-@media(min-width:940px){.barras{gap:0.9rem}}
-.barra{
-  flex:1;display:flex;flex-direction:column;align-items:center;gap:0.45rem;
-  background:none;border:none;padding:0;cursor:pointer;font-family:inherit;
-}
-/* zona con altura propia: las alturas en % se miden aquí y no se deforman */
-.barra-zona{position:relative;width:100%;height:130px}
-@media(min-width:940px){.barra-zona{height:170px}}
-.barra-valor{
-  position:absolute;left:50%;transform:translateX(-50%);
-  font-family:var(--f-mono);font-size:0.81rem;font-weight:600;white-space:nowrap;
-  color:var(--tinta);opacity:0;transition:opacity .2s,bottom .65s cubic-bezier(.25,.9,.3,1);
-  font-variant-numeric:tabular-nums;
-}
-.barra.activa .barra-valor{opacity:1}
-.barra.activa:not(.original) .barra-valor{color:var(--verde)}
-.barra-cuerpo{
-  position:absolute;bottom:0;left:50%;transform:translateX(-50%);
-  width:100%;max-width:16px;border-radius:99px;overflow:hidden;background:var(--verde);
-  display:flex;flex-direction:column;justify-content:flex-start;
-  transition:height .65s cubic-bezier(.25,.9,.3,1),opacity .2s;
-}
-@media(min-width:940px){.barra-cuerpo{max-width:20px}}
-.barra.original .barra-cuerpo{background:var(--tinta-suave)}
-.barra .cuota{width:100%;background:rgba(255,255,255,0.62);transition:height .5s ease}
-.barra:not(.activa) .barra-cuerpo{opacity:0.55}
-.barra.activa .barra-cuerpo{opacity:1}
-.barra-mes{font-family:var(--f-mono);font-size:0.74rem;color:var(--tinta-suave);white-space:nowrap;flex:0 0 auto}
-.barra.activa .barra-mes{color:var(--tinta)}
+.calc-fila .c{color:var(--tinta-media)}
+.calc-fila .v{font-family:var(--f-mono);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
 
-/* --- resultado --- */
-.calc-total{
-  margin-top:1.4rem;display:flex;flex-direction:column;align-items:center;gap:0.5rem;text-align:center;
+/* comparativa anual destacada */
+.calc-anual{
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:0.5rem;
+  margin-top:1.1rem;padding:1rem 0.9rem;border-radius:10px;
+  background:var(--superficie);border:1px solid var(--linea);
 }
-.calc-total-etq{
-  font-family:var(--f-mono);font-size:0.81rem;font-weight:500;letter-spacing:0.14em;
-  text-transform:uppercase;color:var(--tinta-suave);
+.ca-item{display:flex;flex-direction:column;gap:0.3rem;min-width:0}
+.ca-item:last-child{text-align:right;align-items:flex-end}
+.ca-etq{font-family:var(--f-mono);font-size:0.74rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--tinta-suave);line-height:1.3}
+.ca-val{
+  font-family:var(--f-mono);font-weight:600;font-size:clamp(1.05rem,3.6vw,1.3rem);
+  letter-spacing:-0.02em;font-variant-numeric:tabular-nums;white-space:nowrap;
 }
-.calc-total-num{
-  font-family:var(--f-mono);font-weight:600;color:var(--verde);
-  font-size:clamp(3.2rem,13vw,4.6rem);letter-spacing:-0.05em;line-height:1;
-  font-variant-numeric:tabular-nums;
+.ca-val.tach{color:var(--tinta-suave);text-decoration:line-through;text-decoration-color:var(--rojo);text-decoration-thickness:2px}
+.ca-val.nuevo{color:var(--verde)}
+.ca-fl{font-family:var(--f-mono);color:var(--verde);font-size:1.1rem;padding:0 0.2rem}
+
+.calc-quedas{
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  margin-top:1rem;padding-top:1rem;border-top:2px solid var(--tinta);
 }
-.calc-total .btn{margin-top:0.7rem;width:100%;max-width:420px}
-@media(min-width:940px){.calc-total .btn{width:auto;padding-left:2.4rem;padding-right:2.4rem}}
-.calc-pie{font-family:var(--f-mono);font-size:0.74rem;color:var(--tinta-suave);margin-top:1.1rem;line-height:1.6;text-align:center}
+.calc-quedas .c{font-weight:600;font-size:0.96rem;line-height:1.25;max-width:11ch}
+.calc-quedas .v{font-family:var(--f-mano);font-weight:700;color:var(--verde);font-size:clamp(2.3rem,9vw,2.9rem);line-height:1;transform:rotate(-2deg)}
+.calc-pie{font-family:var(--f-mono);font-size:0.77rem;color:var(--tinta-suave);margin-top:1rem;line-height:1.6}
 .calc-pie #op-nombre{color:var(--verde);font-weight:600}
+.calc-cta{margin-top:1.1rem}
+.calc-cta .btn{width:100%}
 
 /* ---------- cláusulas / garantías ---------- */
 .doc{
@@ -594,39 +567,6 @@ input[type=range]::-moz-range-thumb{
 .kpi-txt a{color:var(--verde);font-weight:500}
 
 .testimonios{display:grid;gap:1.3rem}
-@media(max-width:819px){
-  .testimonios{
-    display:flex;gap:0.9rem;position:relative;
-    overflow-x:auto;overflow-y:hidden;
-    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-    margin:0 -1.4rem;padding:0.2rem 8vw 0.6rem;scroll-padding:0 8vw;
-    scrollbar-width:none;-ms-overflow-style:none;
-  }
-  .testimonios::-webkit-scrollbar{display:none}
-  .testimonio{
-    flex:0 0 84vw;scroll-snap-align:center;
-    opacity:1 !important;transform:none !important;
-  }
-  .testimonio:hover{transform:none}
-}
-.carrusel-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.2rem}
-@media(min-width:820px){.carrusel-nav{display:none}}
-.carrusel-flecha{
-  width:38px;height:38px;border-radius:50%;flex-shrink:0;
-  border:1.5px solid var(--linea-fuerte);background:var(--papel-2);
-  color:var(--tinta-media);cursor:pointer;padding:0;
-  display:flex;align-items:center;justify-content:center;
-  transition:border-color .15s,color .15s,transform .12s;
-}
-.carrusel-flecha:hover{border-color:var(--verde);color:var(--verde)}
-.carrusel-flecha:active{transform:scale(0.92)}
-.carrusel-flecha svg{width:16px;height:16px}
-.carrusel-puntos{display:flex;justify-content:center;gap:0.45rem}
-.carrusel-punto{
-  width:7px;height:7px;border-radius:50%;background:var(--linea-fuerte);
-  border:none;padding:0;transition:background .2s ease,width .2s ease;
-}
-.carrusel-punto.activo{background:var(--verde);width:20px;border-radius:99px}
 @media(min-width:820px){.testimonios{grid-template-columns:1fr 1fr;gap:1.6rem}}
 .testimonio{
   background:var(--papel-2);border:1px solid var(--linea);border-radius:var(--radio);
@@ -634,6 +574,11 @@ input[type=range]::-moz-range-thumb{
   transition:transform .2s ease,box-shadow .2s ease;
 }
 .testimonio:hover{transform:translateY(-3px);box-shadow:var(--sombra-papel)}
+.testimonio-cifra{font-family:var(--f-mono);font-weight:600;font-size:1.35rem;letter-spacing:-0.01em;display:flex;align-items:baseline;gap:0.6rem;flex-wrap:wrap}
+.testimonio-cifra .antes{position:relative;color:var(--tinta-suave)}
+.testimonio-cifra .antes::after{content:"";position:absolute;left:-4%;right:-4%;top:52%;height:2.5px;background:var(--rojo);transform:rotate(-3deg);border-radius:2px}
+.testimonio-cifra .despues{color:var(--verde)}
+.testimonio-cifra .flecha{color:var(--tinta-suave);font-size:1rem}
 .testimonio p{font-size:1.0rem;color:var(--tinta-media);flex:1}
 .testimonio-pie{display:flex;align-items:center;gap:0.8rem;font-size:0.92rem}
 .testimonio-pie .avatar{
@@ -772,21 +717,6 @@ input[type=range]::-moz-range-thumb{
 #contacto .form-copy{max-width:620px}
 #contacto .form-copy p{color:#B9CFC2}
 
-/* en ordenador la sección se centra y los puntos van en fila */
-@media(min-width:940px){
-  #contacto .form-copy{max-width:820px;margin:0 auto;text-align:center}
-  #contacto .eyebrow{justify-content:center}
-  #contacto .form-copy p{margin-left:auto;margin-right:auto}
-  .form-puntos{
-    flex-direction:row;justify-content:center;gap:2.4rem;
-    margin:2.4rem auto 2.6rem;flex-wrap:wrap;
-  }
-  .form-puntos li{align-items:center}
-  .cierre-acciones{margin:0 0 2.2rem}
-  .cierre-acciones .btn{width:auto;padding-left:2.6rem;padding-right:2.6rem}
-  .form-alt{max-width:520px;margin:0 auto}
-}
-
 .modal{
   position:fixed;inset:0;z-index:400;display:none;
   align-items:center;justify-content:center;padding:1rem;
@@ -824,13 +754,11 @@ body.modal-abierto{overflow:hidden}
 
 /* ---------- footer ---------- */
 footer{background:var(--verde-negro);color:#8FAA9B;padding:2.4rem 0;border-top:1px solid rgba(255,255,255,0.08)}
-.footer-fila{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem 2rem}
-.footer-izq{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
+.footer-fila{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.2rem}
 .footer-logo{font-weight:700;font-size:1.15rem;color:#fff;text-decoration:none}
 .footer-logo .menos{color:var(--verde-vivo)}
-.footer-legal{font-family:var(--f-mono);font-size:0.77rem;max-width:none;line-height:1.5}
-@media(min-width:1100px){.footer-legal{white-space:nowrap}}
-.footer-contacto{font-family:var(--f-mono);font-size:0.77rem;display:flex;gap:1.4rem;flex-wrap:wrap}
+.footer-legal{font-size:0.85rem;max-width:520px}
+.footer-contacto{font-family:var(--f-mono);font-size:0.85rem;display:flex;gap:1.4rem;flex-wrap:wrap}
 .footer-contacto a{color:#B9CFC2;text-decoration:none}
 .footer-contacto a:hover{color:var(--verde-vivo)}
 
@@ -888,7 +816,7 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
 <!-- ============ HEADER ============ -->
 <header>
   <div class="contenedor nav">
-    <a href="/" class="logo">Factu<span class="menos">Menos</span></a>
+    <a href="#" class="logo">Factu<span class="menos">Menos</span></a>
     <nav class="nav-links" aria-label="Navegación principal">
       <a href="#como-funciona">Cómo funciona</a>
       <a href="#calculadora">Calculadora</a>
@@ -1038,22 +966,15 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
 <section id="calculadora">
   <div class="contenedor">
     <div class="calc-cab reveal">
-      <p class="eyebrow">Calculadora</p>
-      <h2>Así baja tu factura.</h2>
+      <p class="eyebrow">Calculadora de ahorro</p>
+      <h2>Calcula tu ahorro anual.</h2>
     </div>
-
     <div class="calc-panel reveal">
       <div class="calc-control">
-        <p class="calc-pista">Ajusta tu factura</p>
-        <div class="calc-top">
-          <span class="calc-label">Pago ahora</span>
-          <span class="calc-actual"><span id="lbl-factura">200 €</span><small>/mes</small></span>
-        </div>
-        <input type="range" id="factura" min="50" max="400" step="5" value="200" oninput="calcular()" onchange="calcular()" aria-label="Tu factura mensual actual en euros">
-        <div class="calc-fila-op">
-          <label class="calc-label" for="operadora">Mi operadora</label>
+        <div class="calc-grupo">
+          <label class="calc-label" for="operadora">Tu operadora actual</label>
           <select id="operadora" class="calc-select" onchange="calcular()">
-            <option value="">Elegir</option>
+            <option value="">Selecciona tu operadora</option>
             <option>Movistar</option>
             <option>Vodafone</option>
             <option>Orange</option>
@@ -1063,20 +984,37 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
             <option value="otra">Otra</option>
           </select>
         </div>
+        <div class="calc-grupo">
+          <div class="calc-top">
+            <span class="calc-label">Factura mensual actual</span>
+            <span class="calc-actual"><span id="lbl-factura">200 €</span><small>/mes</small></span>
+          </div>
+          <input type="range" id="factura" min="50" max="400" step="5" value="200" oninput="calcular()" onchange="calcular()" aria-label="Tu factura mensual actual en euros">
+          <div class="calc-rango"><span>50 €</span><span>400 €</span></div>
+        </div>
       </div>
-
-      <div class="calc-grafica">
-        <p class="grafica-titulo">Tu factura mes a mes</p>
-        <div class="barras" id="barras" role="group" aria-label="Tu factura mes a mes"></div>
+      <div class="calc-resultado">
+        <div class="calc-fila"><span class="c">Nueva factura estimada</span><span class="v" id="nueva-factura">100 €/mes</span></div>
+        <div class="calc-fila"><span class="c">Cuota FactuMenos</span><span class="v" id="comision">19,99 €/mes</span></div>
+        <div class="calc-anual">
+          <div class="ca-item">
+            <span class="ca-etq">Pago anual actual</span>
+            <span class="ca-val tach" id="pago-actual">2.400 €/año</span>
+          </div>
+          <span class="ca-fl" aria-hidden="true">→</span>
+          <div class="ca-item">
+            <span class="ca-etq">Pago anual estimado</span>
+            <span class="ca-val nuevo" id="pago-nuevo">1.200 €/año</span>
+          </div>
+        </div>
+        <div class="calc-quedas">
+          <span class="c">Tu ahorro anual estimado</span>
+          <span class="v" id="ahorro-anual">960 €</span>
+        </div>
+        <p class="calc-pie">Continúas con <span id="op-nombre">tu operadora actual</span> y mantienes todos tus servicios. Nuestra cuota se calcula sobre el ahorro conseguido: si no hay ahorro, no hay cuota.</p>
+        <div class="calc-cta"><button type="button" class="btn btn-verde abre-form">Solicitar análisis gratuito</button></div>
       </div>
     </div>
-
-    <div class="calc-total reveal">
-      <p class="calc-total-etq">En un año te ahorras</p>
-      <p class="calc-total-num" id="ahorro-anual">960 €</p>
-      <button type="button" class="btn btn-verde abre-form">Quiero mi análisis gratis</button>
-    </div>
-    <p class="calc-pie reveal">Cálculo aproximado a partir de nuestro ahorro medio: tu cifra real la sabrás con el análisis gratuito. Las barras muestran tu factura; nuestra cuota sale del ahorro y ya está descontada del total anual. Sigues con <span id="op-nombre">tu operadora</span> y los mismos servicios.</p>
   </div>
 </section>
 
@@ -1153,11 +1091,12 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
       </div>
       <div class="kpi">
         <p class="kpi-num">4,9&nbsp;<em>★</em></p>
-        <p class="kpi-txt">227 opiniones en <a href="https://es.trustpilot.com/review/factumenos.es" target="_blank" rel="noopener">Trustpilot</a></p>
+        <p class="kpi-txt">227 opiniones en <a href="https://www.trustpilot.com/review/factumenos.es" target="_blank" rel="noopener">Trustpilot</a></p>
       </div>
     </div>
     <div class="testimonios">
       <article class="testimonio reveal">
+        <p class="testimonio-cifra"><span class="antes">340&nbsp;€</span><span class="flecha">→</span><span class="despues">170&nbsp;€/mes</span></p>
         <p>«Pagaba 340&nbsp;€ al mes y pensaba que era lo normal. En tres semanas pasé a pagar 170&nbsp;€. Increíble que la compañía no te lo ofrezca directamente.»</p>
         <div class="testimonio-pie">
           <span class="avatar">MR</span>
@@ -1166,6 +1105,7 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
         </div>
       </article>
       <article class="testimonio reveal">
+        <p class="testimonio-cifra"><span class="despues">−200&nbsp;€/mes</span></p>
         <p>«Lo que más me convenció fue que si no funcionaba no pagaba nada. Funcionó. Ahorro más de 200&nbsp;€ al mes y no tuve que hacer nada yo.»</p>
         <div class="testimonio-pie">
           <span class="avatar">LP</span>
@@ -1174,6 +1114,7 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
         </div>
       </article>
       <article class="testimonio reveal">
+        <p class="testimonio-cifra"><span class="despues">Nueva factura en 15 días</span></p>
         <p>«Pensé que era demasiado bueno para ser verdad. Me enviaron el análisis en 24 horas y a los 15 días ya tenía la nueva factura.»</p>
         <div class="testimonio-pie">
           <span class="avatar">JA</span>
@@ -1182,6 +1123,7 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
         </div>
       </article>
       <article class="testimonio reveal">
+        <p class="testimonio-cifra"><span class="despues">−130&nbsp;€/mes</span> <span class="flecha">·</span> <span class="despues">≈&nbsp;800&nbsp;€ en 6 meses</span></p>
         <p>«Llevo 6 meses ahorrando 130&nbsp;€ al mes. Ya me he ahorrado casi 800&nbsp;€ y me quedan otros 6 meses. Ojalá lo hubiera hecho antes.»</p>
         <div class="testimonio-pie">
           <span class="avatar">CS</span>
@@ -1189,15 +1131,6 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
           <span class="estrellas">★★★★★</span>
         </div>
       </article>
-    </div>
-    <div class="carrusel-nav" id="nav-testimonios">
-      <button type="button" class="carrusel-flecha" id="test-anterior" aria-label="Testimonio anterior">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 L5 8 L10 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="carrusel-puntos" id="puntos-testimonios"></div>
-      <button type="button" class="carrusel-flecha" id="test-siguiente" aria-label="Testimonio siguiente">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3 L11 8 L6 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
     </div>
   </div>
 </section>
@@ -1316,7 +1249,7 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
             </div>
             <div class="form-grupo full privacidad-fila">
               <input type="checkbox" id="f-privacidad">
-              <label for="f-privacidad">He leído y acepto la <a href="privacidad.html" target="_blank">política de privacidad</a>.</label>
+              <label for="f-privacidad">He leído y acepto las <a href="privacidad.html" target="_blank">condiciones</a>.</label>
             </div>
             <div id="error-privacidad" class="form-error" style="grid-column:1/-1;padding:0.2rem 0">Por favor, acepta las condiciones para continuar.</div>
             <div id="error-envio" class="form-error" style="grid-column:1/-1;text-align:center;padding:0.2rem 0"></div>
@@ -1337,14 +1270,12 @@ body.wa-visible .wa-float:hover{transform:scale(1.08)}
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="contenedor footer-fila">
-    <div class="footer-izq">
-      <a href="/" class="footer-logo">Factu<span class="menos">Menos</span></a>
-      <p class="footer-legal">© <span id="anyo">2026</span> · Optimización de contratos de telecomunicaciones · Madrid, España</p>
-    </div>
+    <a href="#" class="footer-logo">Factu<span class="menos">Menos</span></a>
     <div class="footer-contacto">
       <a href="tel:+34660309778">+34 660 309 778</a>
       <a href="mailto:contacto@factumenos.es">contacto@factumenos.es</a>
     </div>
+    <p class="footer-legal">© 2025 FactuMenos · Servicio de optimización de contratos de telecomunicaciones · Madrid, España</p>
   </div>
 </footer>
 
@@ -1362,21 +1293,6 @@ function toggleMenu(){
   menu.classList.toggle('abierto');
   btn.classList.toggle('abierto');
 }
-
-/* ---------- año del pie, siempre actual ---------- */
-(function(){
-  const a=document.getElementById('anyo');
-  if(a)a.textContent=new Date().getFullYear();
-})();
-
-/* ---------- altura real de la primera pantalla ---------- */
-function medirPantalla(){
-  const alto=(window.visualViewport&&window.visualViewport.height)||window.innerHeight;
-  document.documentElement.style.setProperty('--alto-hero',(alto-68)+'px');
-}
-medirPantalla();
-window.addEventListener('orientationchange',()=>setTimeout(medirPantalla,250));
-window.addEventListener('pageshow',medirPantalla);
 
 /* ---------- scroll suave + cierre menú ---------- */
 document.addEventListener('DOMContentLoaded',function(){
@@ -1416,126 +1332,37 @@ function contarTitular(){
   },retardo);
 }
 
-/* ---------- calculadora con gráfica (fórmula original intacta) ---------- */
-function eur(n){
-  return n.toLocaleString('es-ES',{minimumFractionDigits:(n%1?2:0),maximumFractionDigits:2})+' €';
-}
-
-function datos(){
-  const f=parseInt(document.getElementById('factura').value);
-  const ahorro=Math.round(f*0.5);
-  const nueva=f-ahorro;
-  const cuota=Math.floor(ahorro*0.20)-0.01;
-  const pagoNuevo=nueva+cuota;                 // lo que te cuesta al mes en total
-  const ahorroMes=f-pagoNuevo;
-  const ahorroAnual=Math.floor((ahorro-cuota)*12);
-  return {f,ahorro,nueva,cuota,pagoNuevo,ahorroMes,ahorroAnual};
-}
-
-function mesesVisibles(){
-  return window.matchMedia('(min-width:940px)').matches ? 12 : 6;   // 12 en ordenador, 6 en móvil
-}
-let MESES=mesesVisibles();
-const NOMBRES_MES=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
-function etiquetaMes(desplazamiento){
-  const hoy=new Date();
-  const d=new Date(hoy.getFullYear(), hoy.getMonth()+desplazamiento, 1);
-  return NOMBRES_MES[d.getMonth()];
-}
-let mesElegido=1;              // arranca en el primer mes con descuento
-let barrasCreadas=false;
-let graficaVista=false;        // las barras caen al entrar en pantalla
-
-function crearBarras(){
-  const cont=document.getElementById('barras');
-  if(!cont)return;
-  cont.innerHTML='';
-  for(let i=0;i<MESES;i++){
-    const b=document.createElement('button');
-    b.type='button';
-    b.className='barra'+(i===0?' original':'')+(i===mesElegido?' activa':'');
-    b.innerHTML='<span class="barra-zona">'+
-                  '<span class="barra-valor"></span>'+
-                  '<span class="barra-cuerpo"><span class="cuota"></span></span>'+
-                '</span>'+
-                '<span class="barra-mes">'+etiquetaMes(i)+'</span>';
-    b.addEventListener('click',()=>{mesElegido=i;calcular();});
-    cont.appendChild(b);
-  }
-  barrasCreadas=true;
-}
-
+/* ---------- calculadora (fórmula original intacta) ---------- */
 function calcular(){
   const slider=document.getElementById('factura');
-  if(!slider)return;
-  const d=datos();
-  const min=parseInt(slider.min), max=parseInt(slider.max);
-  const pct=((d.f-min)/(max-min))*100;
-  slider.style.background=`linear-gradient(to right, var(--verde) ${pct}%, var(--linea-fuerte) ${pct}%)`;
-  document.getElementById('lbl-factura').textContent=d.f+' €';
+  const f=parseInt(slider.value);
+  const min=parseInt(slider.min);
+  const max=parseInt(slider.max);
+  const pct=((f-min)/(max-min))*100;
+  slider.style.background=`linear-gradient(to right, var(--verde) ${pct}%, var(--linea) ${pct}%)`;
 
-  if(!barrasCreadas)crearBarras();
+  document.getElementById('lbl-factura').textContent=f+' €';
+  const ahorro=Math.round(f*0.5);
+  const nueva=f-ahorro;
+  const comisionRaw=ahorro*0.20;
+  const comisionFloor=Math.floor(comisionRaw)-0.01;
+  const comisionDisplay=comisionFloor.toFixed(2).replace('.',',');
+  const ahorroNeto=Math.floor((ahorro-comisionFloor)*12);
+  document.getElementById('nueva-factura').textContent=nueva+' €/mes';
+  document.getElementById('comision').textContent=comisionDisplay+' €/mes';
+  document.getElementById('ahorro-anual').textContent=ahorroNeto.toLocaleString('es-ES')+' €';
+  document.getElementById('pago-actual').textContent=(f*12).toLocaleString('es-ES')+' €/año';
+  document.getElementById('pago-nuevo').textContent=(nueva*12).toLocaleString('es-ES')+' €/año';
 
-  document.querySelectorAll('.barra').forEach((b,i)=>{
-    const importe = i===0 ? d.f : d.nueva;   // la barra muestra tu factura
-    const cuerpo=b.querySelector('.barra-cuerpo');
-    // hasta que la sección entra en pantalla, todas parten del importe de hoy
-    const zona=b.querySelector('.barra-zona');
-    const maxAlto=Math.max(60,(zona.clientHeight||130)-28); // deja aire arriba para el importe
-    const alto = graficaVista ? Math.round(maxAlto*(importe/d.f)) : maxAlto;
-    cuerpo.style.height=alto+'px';
-    b.querySelector('.barra-valor').style.bottom=(alto+7)+'px';
-    b.querySelector('.cuota').style.height='0%';
-    b.querySelector('.barra-valor').textContent=eur(importe);
-    b.classList.toggle('activa', i===mesElegido);
-    b.setAttribute('aria-label',etiquetaMes(i)+(i===0?' (mes actual)':'')+': '+eur(importe));
-  });
-
-  document.getElementById('ahorro-anual').textContent=d.ahorroAnual.toLocaleString('es-ES')+' €';
-
-  const sel=document.getElementById('operadora'), op=document.getElementById('op-nombre');
+  /* la operadora solo personaliza el texto: no interviene en el cálculo */
+  const sel=document.getElementById('operadora');
+  const op=document.getElementById('op-nombre');
   if(sel&&op){
     const v=sel.value;
-    op.textContent=(v===''||v==='otra')?'tu operadora':v;
+    op.textContent=(v===''||v==='otra')?'tu operadora actual':v;
   }
 }
 calcular();
-
-/* las barras caen cuando la gráfica entra en pantalla */
-(function(){
-  const g=document.getElementById('barras');
-  if(!g)return;
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    graficaVista=true;calcular();return;
-  }
-  const obs=new IntersectionObserver(es=>{
-    es.forEach(e=>{
-      if(e.isIntersecting&&!graficaVista){
-        graficaVista=true;
-        setTimeout(calcular,250);
-        obs.unobserve(e.target);
-      }
-    });
-  },{threshold:0.4});
-  obs.observe(g);
-  // por si el observador no llegara a dispararse
-  setTimeout(()=>{if(!graficaVista){graficaVista=true;calcular();}},1500);
-})();
-
-/* al cambiar de tamaño, ajustar el número de meses */
-let temporizadorMeses=null;
-window.addEventListener('resize',()=>{
-  clearTimeout(temporizadorMeses);
-  temporizadorMeses=setTimeout(()=>{
-    const n=mesesVisibles();
-    if(n!==MESES){
-      MESES=n;
-      barrasCreadas=false;
-      if(mesElegido>MESES-1)mesElegido=MESES-1;
-      calcular();
-    }
-  },200);
-});
 
 /* ---------- KPIs con cuenta ascendente ---------- */
 function animateKPI(elementId, targetNumber, duration = 2000, delay = 0){
@@ -1570,114 +1397,14 @@ const kpiObserver=new IntersectionObserver((entries)=>{
 const kpisEl=document.querySelector('.kpis');
 if(kpisEl)kpiObserver.observe(kpisEl);
 
-/* ---------- WhatsApp: aparece al pasar del hero ---------- */
-const heroEl=document.querySelector('.hero');
-if(heroEl){
-  const waObserver=new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      document.body.classList.toggle('wa-visible',!e.isIntersecting);
-    });
-  },{threshold:0,rootMargin:'-40% 0px 0px 0px'});
-  waObserver.observe(heroEl);
-}else{
-  document.body.classList.add('wa-visible');
-}
+/* ---------- WhatsApp: visible desde el inicio ---------- */
+document.body.classList.add('wa-visible');
 
 /* ---------- reveals al hacer scroll ---------- */
 const observer=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
 },{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-/* ---------- carrusel de testimonios (solo móvil) ---------- */
-(function(){
-  const pista=document.querySelector('.testimonios');
-  const puntos=document.getElementById('puntos-testimonios');
-  const nav=document.getElementById('nav-testimonios');
-  if(!pista||!puntos||!nav)return;
-
-  const tarjetas=[...pista.querySelectorAll('.testimonio')];
-  const menosMovimiento=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let actual=0, auto=null, pausaTemporal=null;
-
-  // indicadores
-  tarjetas.forEach((_,i)=>{
-    const b=document.createElement('button');
-    b.type='button';
-    b.className='carrusel-punto'+(i===0?' activo':'');
-    b.setAttribute('aria-label','Ver testimonio '+(i+1));
-    b.addEventListener('click',()=>{irA(i);intervenirUsuario();});
-    puntos.appendChild(b);
-  });
-  const listaPuntos=[...puntos.querySelectorAll('.carrusel-punto')];
-
-  function irA(i,suave=true){
-    actual=(i+tarjetas.length)%tarjetas.length;
-    pista.scrollTo({
-      left:tarjetas[actual].offsetLeft-(pista.clientWidth-tarjetas[actual].offsetWidth)/2,
-      behavior:(suave&&!menosMovimiento)?'smooth':'auto'
-    });
-    marcar(actual);
-  }
-  function marcar(i){
-    listaPuntos.forEach((p,n)=>p.classList.toggle('activo',n===i));
-  }
-
-  document.getElementById('test-anterior').addEventListener('click',()=>{irA(actual-1);intervenirUsuario();});
-  document.getElementById('test-siguiente').addEventListener('click',()=>{irA(actual+1);intervenirUsuario();});
-
-  // el punto activo sigue al dedo
-  let esperando=false;
-  pista.addEventListener('scroll',()=>{
-    if(esperando)return;
-    esperando=true;
-    requestAnimationFrame(()=>{
-      const centro=pista.scrollLeft+pista.clientWidth/2;
-      let cerca=0,min=Infinity;
-      tarjetas.forEach((t,i)=>{
-        const d=Math.abs((t.offsetLeft+t.offsetWidth/2)-centro);
-        if(d<min){min=d;cerca=i;}
-      });
-      actual=cerca;marcar(cerca);
-      esperando=false;
-    });
-  },{passive:true});
-
-  /* --- avance automático --- */
-  function arrancar(){
-    if(menosMovimiento||auto)return;
-    auto=setInterval(()=>irA(actual+1),5000);
-  }
-  function parar(){clearInterval(auto);auto=null;}
-
-  // al tocar, se detiene y reanuda 9 s después
-  function intervenirUsuario(){
-    parar();
-    clearTimeout(pausaTemporal);
-    pausaTemporal=setTimeout(revisar,9000);
-  }
-  pista.addEventListener('touchstart',intervenirUsuario,{passive:true});
-  pista.addEventListener('mousedown',intervenirUsuario);
-
-  // solo avanza si la sección está en pantalla y el carrusel está activo
-  let enVista=false;
-  function esCarrusel(){return getComputedStyle(nav).display!=='none';}
-  function revisar(){
-    if(enVista&&esCarrusel()&&!document.hidden)arrancar();
-    else parar();
-  }
-  const vigilante=new IntersectionObserver(entradas=>{
-    entradas.forEach(e=>{enVista=e.isIntersecting;});
-    revisar();
-  },{threshold:0.35});
-  vigilante.observe(pista);
-
-  window.addEventListener('resize',revisar);
-  // al volver a la pestaña o de otra app, se reanuda
-  document.addEventListener('visibilitychange',()=>{
-    if(document.hidden)parar(); else revisar();
-  });
-})();
 
 /* ---------- FAQ ---------- */
 function toggleFaq(btn){
